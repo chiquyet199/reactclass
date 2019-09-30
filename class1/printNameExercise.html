@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>Reactclass</title>
+    <style>
+      /** CSS code goes here*/
+    </style>
+  </head>
+  <body>
+    <h1>Hello everyone</h1>
+    name: <input class="name" type="text"/>
+    <button class="sayhello">Say Hello</button>
+    <button class="sayhi">Say Hi</button>
+    <script>
+      //code javascript goes here
+      //javascript code normally placed at the end of body tag
+
+      //Declare variable
+      //Datatype
+      //Query html element 
+      //Bind Event listener on html element
+      //Function
+
+      let sayHelloButton = document.querySelector('.sayhello')
+      let sayHiButton = document.querySelector('.sayhi')
+      let nameInput = document.querySelector('.name')
+      
+      sayHelloButton.addEventListener('click', function(){
+        let name = nameInput.value
+        alert('Hello ' + name)
+      })
+
+      sayHiButton.addEventListener('click', function(){
+        alert("Hi 'Everyone'")
+      })
+
+    </script>
+  </body>
+</html>
