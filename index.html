@@ -7,19 +7,28 @@
   </head>
   <body>
     <h1>Hello everyone</h1>
-    <button>Say Hello</button>
+    name: <input type="text"/>
+    <button class="sayhello">Say Hello</button>
+    <button class="sayhi">Say Hi</button>
     <script>
       //code javascript goes here
       //javascript code normally placed at the end of body tag
 
       //Declare variable
+      //Datatype
       //Query html element 
       //Bind Event listener on html element
       //Function
 
-      let button = document.querySelector('button')
-      button.addEventListener('click', function(){
+      let sayHelloButton = document.querySelector('.sayhello')
+      let sayHiButton = document.querySelector('.sayhi')
+
+      sayHelloButton.addEventListener('click', function(){
         alert('Hello Everyone')
+      })
+
+      sayHiButton.addEventListener('click', function(){
+        alert("Hi 'Everyone'")
       })
 
     </script>
