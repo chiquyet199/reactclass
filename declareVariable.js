@@ -16,7 +16,7 @@
 var a = 1;
 let b = 2;
 const PI = 3.14;
-PI = 3.15;
+// PI = 3.15;
 b = 3;
 var c = a + b + PI;
 
