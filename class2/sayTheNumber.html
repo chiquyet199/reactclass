@@ -34,9 +34,26 @@
         let numberStrings = ["one","two","three","four","five"]
         return numberStrings[num-1]
       }
-
+      
       const getNumberStringByLanguage = (num, lang) => {
-        return ""
+        /** CACH 1 */
+        // let numberStringsInEnglish = ["one","two","three","four","five"]
+        // let numberStringsInVietnamese = ['mot', 'hai', 'ba', 'bon', 'nam']
+        // if(lang === 'en'){
+        //   return numberStringsInEnglish[num-1]
+        // }
+        // if(lang === 'vn'){
+        //   return numberStringsInVietnamese[num-1]
+        // }
+
+        /** CACH 2 */
+        let numberStringsMapping = {
+          en: ["one","two","three","four","five"],
+          vn: ['mot', 'hai', 'ba', 'bon', 'nam']
+        }
+        // numberStringsMapping.en
+        // numberStringsMapping['en']
+        return numberStringsMapping[lang][num-1]
       }
 
       sayItButton.addEventListener('click', function() {
