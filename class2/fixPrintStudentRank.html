@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Student Rank</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2>Student Ranking</h2>
+    <input
+      class="mark-input"
+      type="number"
+      name="mark"
+      placeholder="Input your mark here"
+    />
+    <button class="ranking">Check</button>
+
+    <script>
+      const markInput = document.querySelector('.mark-input')
+      const rankingButton = document.querySelector('.ranking')
+      const calculateRank = mark => {
+        let ranking = ''
+        const invalidMark = mark < 0 || mark > 10
+
+        if (invalidMark) return
+
+        if (mark <= 4.9) ranking = 'Poor'
+        else if (mark <= 6.4) ranking = 'Average'
+        else if (mark <= 7.9) ranking = 'Good'
+        else if (mark <= 10) ranking = 'Excellent'
+
+        return ranking
+      }
+      rankingButton.addEventListener('click', function() {
+        const mark = markInput.value
+        if(mark === ""){
+          alert('Empty input, pls fill in.')
+          return
+        }
+
+        const ranking = calculateRank(mark)
+        
+        if (ranking === undefined) {
+          alert('Invalid input, please recheck')
+          return
+        }
+        alert(ranking)
+      })
+    </script>
+    <script src="function.js"></script>
+  </body>
+</html>
+
+<!-- Common mistake -->
+<!-- Input type should be number -->
+<!-- wrong format/grammar css class name  -->
+<!-- Use const for variable not changed  -->
+<!--  -->
+<!-- Remove unused condition -->
