@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Say the number</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2>Input number</h2>
+    <input
+      class="num-input"
+      type="number"
+      placeholder="Input a number from 1 to 10"
+    />
+    <h2>Input Language code (en - vn)</h2>
+    <input
+      class="lang-input"
+      type="text"
+      placeholder="Input a number code"
+    />
+    <button class="say-it">Say it</button>
+
+    <script>
+      const numberInput = document.querySelector('.num-input')
+      const langInput = document.querySelector('.lang-input')
+      const sayItButton = document.querySelector('.say-it')
+      
+      const getNumberString = num => {
+        let numberStrings = ["one","two","three","four","five"]
+        return numberStrings[num-1]
+      }
+
+      const getNumberStringByLanguage = (num, lang) => {
+        return ""
+      }
+
+      sayItButton.addEventListener('click', function() {
+        let number = Number(numberInput.value)
+        let lang = langInput.value
+        let result = getNumberStringByLanguage(number,lang)
+        alert(result)
+      })
+    </script>
+  </body>
+</html>
+
+<!-- Common mistake -->
+<!-- Input type should be number -->
+<!-- wrong format/grammar css class name  -->
+<!-- Use const for variable not changed  -->
+<!--  -->
+<!-- Remove unused condition -->
