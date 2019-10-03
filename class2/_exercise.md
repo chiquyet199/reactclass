@@ -9,8 +9,8 @@
 ## Make a simple calculator
 > Make UI for a simple calculator. Contains 
 >
- - 10 buttons represent numbers from 1 to 9
- - 4 buttons represent operators (+ - * /)
- - 1 button **=**
- - 1 textbox to show result
+> - 10 buttons represent numbers from 1 to 9
+> - 4 buttons represent operators (+ - * /)
+> - 1 button **=**
+> - 1 textbox to show result
 > Add functional for the calculator
