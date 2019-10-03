@@ -13,4 +13,5 @@
 > - 4 buttons represent operators (+ - * /)
 > - 1 button **=**
 > - 1 textbox to show result
+>
 > Add functional for the calculator
