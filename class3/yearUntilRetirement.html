@@ -37,9 +37,7 @@
     function getYearsUntilRetirement(yob, gender){
         if(isNaN(yob)) return
 
-        const today = new Date();
-        const currentYear = today.getFullYear()
-        const userAge = currentYear - yob
+        const userAge = calculateAge(yob)
         const maxAgeRetirement = gender === 'Male' ? 65 : 60
         
         return maxAgeRetirement - userAge
@@ -67,24 +65,30 @@
     //   }
     // })
 
-    // ageanimaldesign.addEventListener('click', function () {
-    //   const yearinput = birthyear.value
-    //   const currentyear = d.getFullYear()
-    //   const lasttwodigityear = yearinput.substring(2)
-    //   const currentage = currentyear - yearinput
-    //   let animal = ['Rat', 'Ox', 'Tiger', 'Rabbit', 'Dragon', 'Snake', 'Horse', 'Goat', 'Monkey', 'Rooster', 'Dog', 'Pig'];
-    //   let count2digit = lasttwodigityear % 12
-    //   let count3digit = (parseInt (lasttwodigityear)+ 100)%12
-    //   if (yearinput > currentyear || yearinput === "" || yearinput < 0) {
-    //     alert('Invalid. Please check your input');
-    //     return
-    //   }
-    //   if (yearinput < 2000) {
-    //     alert((currentage) + ' years ' + animal[count2digit])
-    //   }else {
-    //     alert((currentage) + ' years ' + animal[count3digit])
-    //   }
-    // })
+    calculateAnimalYearBtn.addEventListener('click', function () {
+      if(yobEl.value === '') return
+
+      const year = Number(yobEl.value)
+      const age = calculateAge(year)
+      const animalAge = getAnimalAge(year)
+      alert((age) + ' years ' + animalAge)
+    })
+
+    function calculateAge(yob){
+      if(isNaN(yob)) return
+
+      const today = new Date()
+      const currentYear = today.getFullYear()
+      return currentYear - yob
+    }
+
+    function getAnimalAge(yob){
+      if(isNaN(yob)) return
+
+      const animals = ['Than', 'Dau', 'Tuat', 'Hoi', 'Ti', 'Suu', 'Dan', 'Meo', 'Thin', 'Ty', 'Ngo', 'Mui']
+      const index = yob % 12
+      return animals[index]
+    }
   
   </script>
 </body>
