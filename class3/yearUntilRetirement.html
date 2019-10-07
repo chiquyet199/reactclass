@@ -21,29 +21,52 @@
     const genderEl = document.querySelector('.gender')
     const calculateYearsBtn = document.querySelector('.yearsUntilRetirement')
     const calculateAnimalYearBtn = document.querySelector('.ageAnimal')
-    var today = new Date();
 
     calculateYearsBtn.addEventListener('click', function () {
-      const year = yobEl.value
-      const gender = genderEl.value
-      const currentYear = today.getFullYear()
-      const maxAgeOfMaleRetirement = 65
-      const maxAgeOfFemaleRetirement = 60
-      if (year === "" || year > currentYear) {
-        alert('Invalid. Please check your input');
-        return
-      }
-      const userAge = currentYear - year
-      if ((gender === "Male" && userAge > maxAgeOfMaleRetirement) || (gender === "Female" && userAge > maxAgeOfFemaleRetirement)) {
-        alert('Retired already. Enjoy your retirement!');
-        return;
-      }
-      if (gender === "Male") {
-        document.getElementById("result").innerHTML = (maxAgeOfMaleRetirement - userAge) + ' years'
-      } else {
-        document.getElementById("result").innerHTML = (maxAgeOfFemaleRetirement - userAge) + ' years'
-      }
+        if(yobEl.value === '') return
+
+        const year = Number(yobEl.value)
+        const gender = genderEl.value
+        const yearsUntilRetirement = getYearsUntilRetirement(year, gender)
+        const message = yearsUntilRetirement > 0 
+            ? `There are ${yearsUntilRetirement} until your retiment`
+            : `You already retiment`
+        document.getElementById("result").innerHTML = message
     })
+
+    function getYearsUntilRetirement(yob, gender){
+        if(isNaN(yob)) return
+
+        const today = new Date();
+        const currentYear = today.getFullYear()
+        const userAge = currentYear - yob
+        const maxAgeRetirement = gender === 'Male' ? 65 : 60
+        
+        return maxAgeRetirement - userAge
+    }
+
+    // calculateYearsBtn.addEventListener('click', function () {
+    //   const year = yobEl.value
+    //   const gender = genderEl.value
+    //   const currentYear = today.getFullYear()
+    //   const maxAgeOfMaleRetirement = 65
+    //   const maxAgeOfFemaleRetirement = 60
+    //   if (year === "" || year > currentYear) {
+    //     alert('Invalid. Please check your input');
+    //     return
+    //   }
+    //   const userAge = currentYear - year
+    //   if ((gender === "Male" && userAge > maxAgeOfMaleRetirement) || (gender === "Female" && userAge > maxAgeOfFemaleRetirement)) {
+    //     alert('Retired already. Enjoy your retirement!');
+    //     return;
+    //   }
+    //   if (gender === "Male") {
+    //     document.getElementById("result").innerHTML = (maxAgeOfMaleRetirement - userAge) + ' years'
+    //   } else {
+    //     document.getElementById("result").innerHTML = (maxAgeOfFemaleRetirement - userAge) + ' years'
+    //   }
+    // })
+
     // ageanimaldesign.addEventListener('click', function () {
     //   const yearinput = birthyear.value
     //   const currentyear = d.getFullYear()
