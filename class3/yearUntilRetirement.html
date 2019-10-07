@@ -1,0 +1,69 @@
+<html>
+
+<head>
+  <title>Homework Calculate years until retirement</title>
+</head>
+
+<body>
+  Your Gender
+  <select class="gender">
+    <option value="Male"> Male </option>
+    <option value="Female"> Female </option>
+  </select> <br>
+  <input class="yearOfBirth" type="number" placeholder="Please input your year of birth"></input>
+
+  <button class="yearsUntilRetirement">Years until your retirement </button>
+  <p>Years until your retirement is</p>
+  <p id='result'></p>
+  <button class="ageAnimal">Your age and animal designation</button>
+  <script>
+    const yobEl = document.querySelector('.yearOfBirth')
+    const genderEl = document.querySelector('.gender')
+    const calculateYearsBtn = document.querySelector('.yearsUntilRetirement')
+    const calculateAnimalYearBtn = document.querySelector('.ageAnimal')
+    var today = new Date();
+
+    calculateYearsBtn.addEventListener('click', function () {
+      const year = yobEl.value
+      const gender = genderEl.value
+      const currentYear = today.getFullYear()
+      const maxAgeOfMaleRetirement = 65
+      const maxAgeOfFemaleRetirement = 60
+      if (year === "" || year > currentYear) {
+        alert('Invalid. Please check your input');
+        return
+      }
+      const userAge = currentYear - year
+      if ((gender === "Male" && userAge > maxAgeOfMaleRetirement) || (gender === "Female" && userAge > maxAgeOfFemaleRetirement)) {
+        alert('Retired already. Enjoy your retirement!');
+        return;
+      }
+      if (gender === "Male") {
+        document.getElementById("result").innerHTML = (maxAgeOfMaleRetirement - userAge) + ' years'
+      } else {
+        document.getElementById("result").innerHTML = (maxAgeOfFemaleRetirement - userAge) + ' years'
+      }
+    })
+    // ageanimaldesign.addEventListener('click', function () {
+    //   const yearinput = birthyear.value
+    //   const currentyear = d.getFullYear()
+    //   const lasttwodigityear = yearinput.substring(2)
+    //   const currentage = currentyear - yearinput
+    //   let animal = ['Rat', 'Ox', 'Tiger', 'Rabbit', 'Dragon', 'Snake', 'Horse', 'Goat', 'Monkey', 'Rooster', 'Dog', 'Pig'];
+    //   let count2digit = lasttwodigityear % 12
+    //   let count3digit = (parseInt (lasttwodigityear)+ 100)%12
+    //   if (yearinput > currentyear || yearinput === "" || yearinput < 0) {
+    //     alert('Invalid. Please check your input');
+    //     return
+    //   }
+    //   if (yearinput < 2000) {
+    //     alert((currentage) + ' years ' + animal[count2digit])
+    //   }else {
+    //     alert((currentage) + ' years ' + animal[count3digit])
+    //   }
+    // })
+  
+  </script>
+</body>
+
+</html>
