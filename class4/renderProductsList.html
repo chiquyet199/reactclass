@@ -1,0 +1,74 @@
+<html>
+
+<head>
+  <title>Homework Calculate years until retirement</title>
+  <style>
+    .product{
+      padding: 10px;
+      border: 1px solid;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  Products
+  <div class="products"></div>
+  <script>
+    const products = [
+      {
+        name: 'iPhone10',
+        price: 1000,
+        image: '',
+        os: 'IOS'
+      },
+      {
+        name: 'iPhone11',
+        price: 2000,
+        image: '',
+        os: 'IOS'
+      },
+      {
+        name: 'Note 9',
+        price: 800,
+        image: '',
+        os: 'Android'
+      },
+      {
+        name: 'Xiaomi',
+        price: 400,
+        image: '',
+        os: 'Android'
+      },
+      {
+        name: 'Note 10',
+        price: 1800,
+        image: '',
+        os: 'Android'
+      },
+      {
+        name: 'Huawei',
+        price: 800,
+        image: '',
+        os: 'Android'
+      },
+    ]
+    const productsContainer = document.querySelector('.products')
+    for(let i = 0;i< products.length; i++){
+      const productEl = createProductEl(products[i])
+      productsContainer.append(productEl)
+    }
+
+    function createProductEl(productObj){
+      const productEl = document.createElement('div')
+      productEl.classList.add('product')
+      productEl.innerHTML = `
+        <h1>${productObj.name}</h1>
+        <span>${productObj.price}</span>
+      `
+      return productEl
+    }
+  </script>
+</body>
+
+</html>
