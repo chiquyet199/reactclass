@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>To Do List</title>
+    <style>
+      body button {
+        width: 100px;
+        height: 40px;
+        font-size: 15px;
+        margin: 10px 10px;
+      }
+      body input {
+        width: 200px;
+        height: 35px;
+        font-size: 15px;
+      }
+      .todoitem {
+        color: blue;
+        font-size: 20px;
+        margin: 10px 0;
+        user-select: none;
+      }
+      .todoitem.done {
+        color: gray;
+        text-decoration: line-through;
+      }
+      .filter-button.active {
+        background-color: red;
+        color: white;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>To Do List</h2>
+    
+
+    <script>
+      let appState = {
+        filter: 'all',
+        todos: [
+          {
+            name: 'nau an',
+            done: false
+          },
+          {
+            name: 'giat do',
+            done: true
+          },
+          {
+            name: 'trong con ',
+            done: false
+          },
+        ]
+      };
+
+      function render(state){
+        let body = document.body
+        body.innerHTML = `
+        <form class="add-todo">
+          <input class="todoitem-input" type="text" />
+          <button class="add-todoitem-button">Add</button>
+        </form>
+        <ul class="todoitems">
+          ${state.todos.map(todo => `<li class="todoitem ${todo.done ? 'done' : ''}">${todo.name}</li>`).join('')}
+        </ul>
+        <div>
+          <button class="show-all filter-button ${state.filter === 'all' ? 'active' : ''}">All</button>
+          <button class="show-done filter-button  ${state.filter === 'done' ? 'active' : ''}">Done</button>
+          <button class="show-not-done filter-button  ${state.filter === 'notDone' ? 'active' : ''}">Not Done</button>
+        </div>
+        `
+      }
+
+      render(appState)
+
+      document.querySelector('.add-todo').addEventListener('submit', function(){
+        let newTodo = {
+          name: document.querySelector('input').value,
+          done: false
+        }
+        appState.todos.push(newTodo)
+        render(appState)
+      })
+
+    </script>
+  </body>
+</html>
