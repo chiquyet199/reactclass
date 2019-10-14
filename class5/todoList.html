@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>To Do List</title>
+    <style>
+        body button {
+            width: 100px;
+            height: 40px;
+            font-size: 15px;
+            margin: 10px 10px;
+        }
+        body input {
+            width: 200px;
+            height: 35px;
+            font-size: 15px;
+        }
+        .todoitem {
+            color: blue;
+            font-size: 20px;
+            margin: 10px 0;
+            user-select: none;
+        }
+        .todoitem.done {
+            color: gray;
+            text-decoration: line-through;
+        }
+        .filter-button.active {
+            background-color: red;
+            color: white;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>To Do List</h2>
+    <form class="add-todo">
+        <input class="todoitem-input" type="text">
+        <button class="add-todoitem-button">Add</button>
+    </form>
+    <ul class="todoitems"></ul>
+    <div>
+        <button class="show-all filter-button active">All</button>
+        <button class="show-done filter-button">Done</button>
+        <button class="show-not-done filter-button">Not Done</button>
+    </div>
+
+    <script>
+        const addTodoForm = document.querySelector('.add-todo')
+        const toDoItemInput = document.querySelector('.todoitem-input')
+        const addToDoItemBtn = document.querySelector('.add-todoitem-button')
+        const toDoItemsContainer = document.querySelector('.todoitems')
+        const allToDoItemBtn = document.querySelector('.show-all')
+        const doneToDoItemBtn = document.querySelector('.show-done')
+        const notDoneToDoItemBtn = document.querySelector('.show-not-done')
+
+        addTodoForm.addEventListener('submit', function(event){
+          event.preventDefault()
+
+          if(toDoItemInput.value === "") return
+
+          addTodoItem(toDoItemInput.value)
+          clearAddTodoInput()
+          focusAddTodoInput()
+        })
+
+        function addTodoItem(item){
+          let todoEl = createToDoItemEle(item)
+          addToDOM(todoEl)
+          todoEl.addEventListener('click', function(){
+              todoEl.classList.toggle('done')
+          })
+        }
+
+        allToDoItemBtn.addEventListener('click', function(){
+          let allTodoItems = document.querySelectorAll('.todoitem')
+          for(let i = 0; i < allTodoItems.length; i++){
+            let todoEl = allTodoItems[i]
+            todoEl.classList.remove('hidden')
+          }
+        })
+
+        doneToDoItemBtn.addEventListener('click', function(){
+          let allTodoItems = document.querySelectorAll('.todoitem')
+          for(let i = 0; i < allTodoItems.length; i++){
+            let todoEl = allTodoItems[i]
+            if(todoEl.classList.contains('done')){
+              todoEl.classList.remove('hidden')
+            }else{
+              todoEl.classList.add('hidden')
+            }
+          }
+        })
+
+        notDoneToDoItemBtn.addEventListener('click', function(){
+          let allTodoItems = document.querySelectorAll('.todoitem')
+          for(let i = 0; i < allTodoItems.length; i++){
+            let todoEl = allTodoItems[i]
+            if(todoEl.classList.contains('done')){
+              todoEl.classList.add('hidden')
+            }else{
+              todoEl.classList.remove('hidden')
+            }
+          }
+        })
+
+        function addToDOM(todoEl){
+          toDoItemsContainer.append(todoEl)
+        }
+
+        function clearAddTodoInput(){
+          toDoItemInput.value = ""
+        }
+
+        function focusAddTodoInput(){
+          toDoItemInput.focus()
+        }
+
+        function createToDoItemEle(todo) {
+            const toDoItemEle = document.createElement('li')
+            toDoItemEle.classList.add('todoitem')
+            toDoItemEle.innerHTML = todo
+            return toDoItemEle
+        }
+
+
+        // addToDoItemBtn.addEventListener('click', function () {
+        //     if (toDoItemInput.value === "") return
+        //     toDoItems.push(toDoItemInput.value)
+        //     let i = toDoItems.length - 1
+        //     const toDoItemEle = createToDoItemEle(toDoItems[i])
+        //     toDoItemsContainer.appendChild(toDoItemEle)
+        //     const toggleToDoItem = document.getElementsByClassName('todoitem')[i]
+        //     toggleToDoItem.addEventListener('click', function () {
+        //         toggleToDoItem.classList.toggle("done")
+        //         // if (toggleToDoItem.classList.contains("done"))
+        //         //     toggleToDoItem.classList.remove('done')
+        //         // else
+        //         //     toggleToDoItem.classList.add('done')
+        //     })
+        //     toDoItemInput.value = ""
+        // })
+        // doneToDoItemBtn.addEventListener('click', function () {
+        //     const toDoItemsEle = document.querySelectorAll('.todoitem')
+        //     for (let i = 0; i < toDoItemsEle.length; i++) {
+        //         const toDoItem = document.getElementsByClassName('todoitem')[i]
+        //         if (toDoItem.classList.contains('done'))
+        //             toDoItem.classList.remove('hidden')
+        //         else
+        //             toDoItem.classList.add('hidden')
+        //     }
+        //     doneToDoItemBtn.classList.add('active')
+        //     notDoneToDoItemBtn.classList.remove('active')
+        //     allToDoItemBtn.classList.remove('active')
+        // })
+        // notDoneToDoItemBtn.addEventListener('click', function () {
+        //     const toDoItemsEle = document.querySelectorAll('.todoitem')
+        //     for (let i = 0; i < toDoItemsEle.length; i++) {
+        //         const toDoItem = document.getElementsByClassName('todoitem')[i]
+        //         if (!(toDoItem.classList.contains('done')))
+        //             toDoItem.classList.remove('hidden')
+        //         else
+        //             toDoItem.classList.add('hidden')
+        //     }
+        //     notDoneToDoItemBtn.classList.add('active')
+        //     doneToDoItemBtn.classList.remove('active')
+        //     allToDoItemBtn.classList.remove('active')
+        // })
+        // allToDoItemBtn.addEventListener('click', function () {
+        //     const toDoItemsEle = document.querySelectorAll('.todoitem')
+        //     for (let i = 0; i < toDoItemsEle.length; i++) {
+        //         const toDoItem = document.getElementsByClassName('todoitem')[i]
+        //         toDoItem.classList.remove('hidden')
+        //     }
+        //     allToDoItemBtn.classList.add('active')
+        //     doneToDoItemBtn.classList.remove('active')
+        //     notDoneToDoItemBtn.classList.remove('active')
+        // })
+        
+    </script>
+</body>
+
+</html>
