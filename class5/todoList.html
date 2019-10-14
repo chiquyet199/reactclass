@@ -84,6 +84,7 @@
             let todoEl = allTodoItems[i]
             todoEl.classList.remove('hidden')
           }
+          showActiveButton('all')
         })
 
         doneToDoItemBtn.addEventListener('click', function(){
@@ -96,6 +97,7 @@
               todoEl.classList.add('hidden')
             }
           }
+          showActiveButton('done')
         })
 
         notDoneToDoItemBtn.addEventListener('click', function(){
@@ -108,7 +110,18 @@
               todoEl.classList.remove('hidden')
             }
           }
+          showActiveButton('notDone')
         })
+
+        function showActiveButton(btn){
+          const filterButtons = document.querySelectorAll('.filter-button')
+          for(let i =0; i < filterButtons.length; i++){
+            filterButtons[i].classList.remove('active')
+          }
+          if(btn === 'all') allToDoItemBtn.classList.add('active')
+          else if(btn === 'done') doneToDoItemBtn.classList.add('active')
+          else if(btn === 'notDone') notDoneToDoItemBtn.classList.add('active')
+        }
 
         function addToDOM(todoEl){
           toDoItemsContainer.append(todoEl)
