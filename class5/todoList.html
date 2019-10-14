@@ -59,6 +59,7 @@
         const allToDoItemBtn = document.querySelector('.show-all')
         const doneToDoItemBtn = document.querySelector('.show-done')
         const notDoneToDoItemBtn = document.querySelector('.show-not-done')
+        let filterValue = 'all'
 
         addTodoForm.addEventListener('submit', function(event){
           event.preventDefault()
@@ -74,7 +75,18 @@
           let todoEl = createToDoItemEle(item)
           addToDOM(todoEl)
           todoEl.addEventListener('click', function(){
-              todoEl.classList.toggle('done')
+              // todoEl.classList.toggle('done')
+              if(todoEl.classList.contains('done')){
+                todoEl.classList.remove('done')
+                if(filterValue === 'done'){
+                  todoEl.classList.add('hidden')
+                }
+              }else{
+                todoEl.classList.add('done')
+                if(filterValue === 'notDone'){
+                  todoEl.classList.add('hidden')
+                }
+              }
           })
         }
 
@@ -114,6 +126,7 @@
         })
 
         function showActiveButton(btn){
+          filterValue = btn
           const filterButtons = document.querySelectorAll('.filter-button')
           for(let i =0; i < filterButtons.length; i++){
             filterButtons[i].classList.remove('active')
@@ -138,6 +151,9 @@
         function createToDoItemEle(todo) {
             const toDoItemEle = document.createElement('li')
             toDoItemEle.classList.add('todoitem')
+            if(filterValue === 'done'){
+              toDoItemEle.classList.add('hidden')
+            }
             toDoItemEle.innerHTML = todo
             return toDoItemEle
         }
