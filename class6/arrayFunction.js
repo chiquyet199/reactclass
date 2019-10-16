@@ -49,6 +49,7 @@ let students = [
 ]
 
 /**
+ * Viết 1 function in ra số tuổi của từng học sinh
  * Viết 1 function trả về tổng số tuổi của những người có điểm lớn hơn 5
  * Viết 1 function trả về 1 mảng chưa tên của những học sinh có tuổi lớn hơn 10
  * Viết 1 function trả về 1 mảng các học sinh có tuổi lơn hơn 10 và nhỏ hơn 15
