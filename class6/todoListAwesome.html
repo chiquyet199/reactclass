@@ -42,18 +42,26 @@
     
 
     <script>
+
+      function generateUniqueId(){
+        return Math.floor(new Date().getTime() * Math.random()) + ''
+      }
+      
       let appState = {
         filter: 'all',
         todos: [
           {
+            id: generateUniqueId(),
             name: 'nau an',
             done: false
           },
           {
+            id: generateUniqueId(),
             name: 'giat do',
             done: true
           },
           {
+            id: generateUniqueId(),
             name: 'trong con ',
             done: false
           },
@@ -62,7 +70,10 @@
 
       function renderTodoItems(todos){
         let todosStringArr = todos.map(function(todo){
-          return `<li class="todoitem ${todo.done ? 'done' : ''}">${todo.name}</li>`
+          return `
+            <li class="todoitem ${todo.done ? 'done' : ''}" data-id="${todo.id}">
+              ${todo.name}
+            </li>`
         })
         return todosStringArr.join('')
       }
@@ -97,6 +108,7 @@
       function bindEvents(){
         document.querySelector('.add-todo').addEventListener('submit', function(){
           let newTodo = {
+            id: generateUniqueId(),
             name: document.querySelector('input').value,
             done: false
           }
@@ -117,6 +129,17 @@
         document.querySelector('.show-all').addEventListener('click', function(){
           appState.filter = 'all'
           render(appState)
+        })
+        
+        Array.from(document.querySelectorAll('.todoitem')).forEach(function(todoItemEl){
+          todoItemEl.addEventListener('click', function(){
+            const id = todoItemEl.getAttribute('data-id')
+            const todo = appState.todos.find(function(item){
+              return item.id === id
+            })
+            todo.done = !todo.done
+            render(appState)
+          })
         })
       }
 
