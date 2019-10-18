@@ -70,7 +70,7 @@
       function render(state){
         let body = document.querySelector('body')
         let displayTodo = state.todos.filter(function(todo){
-          if(state.filter === 'all') return todo
+          if(state.filter === 'all') return true
           if(state.filter === 'done') return todo.done === true
           if(state.filter === 'notDone') return todo.done === false
         })
