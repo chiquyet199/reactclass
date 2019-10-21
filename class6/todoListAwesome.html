@@ -69,9 +69,7 @@
       function renderTodoItems(todos) {
         let todosStringArr = todos.map(function(todo) {
           return `
-            <li class="todoitem ${
-              todo.done ? "done" : ""
-            }" data-id="${todo.id}">
+            <li class="todoitem ${todo.done ? "done" : ""}" data-id="${todo.id}">
               ${todo.name}
             </li>`;
         });
@@ -120,52 +118,40 @@
           notDone: getAllNotDoneTodosCount
         };
         return `
-          <button class="${classNameMapper[type]} filter-button ${
-          state.filter === type ? "active" : ""
-        }">${buttonTextMapper[type]} (${getCountFunctionsMapper[type](
-          state
-        )})</button>
+          <button class="${classNameMapper[type]} filter-button ${state.filter === type ? "active" : ""}">${buttonTextMapper[type]} (${getCountFunctionsMapper[type](state)})</button>
         `;
       }
 
       function bindEvents() {
-        document
-          .querySelector(".add-todo")
-          .addEventListener("submit", function(event) {
-            event.preventDefault();
-            const todoName = document.querySelector("input").value;
-            if (invalidInput(todoName)) {
-              return;
-            }
-            let newTodo = {
-              id: generateUniqueId(),
-              name: todoName,
-              done: false
-            };
-            appState.todos.push(newTodo);
-            render(appState);
-          });
+        document.querySelector(".add-todo").addEventListener("submit", function(event) {
+          event.preventDefault();
+          const todoName = document.querySelector("input").value;
+          if (invalidInput(todoName)) {
+            return;
+          }
+          let newTodo = {
+            id: generateUniqueId(),
+            name: todoName,
+            done: false
+          };
+          appState.todos.push(newTodo);
+          render(appState);
+        });
 
-        document
-          .querySelector(".show-done")
-          .addEventListener("click", function() {
-            appState.filter = "done";
-            render(appState);
-          });
+        document.querySelector(".show-done").addEventListener("click", function() {
+          appState.filter = "done";
+          render(appState);
+        });
 
-        document
-          .querySelector(".show-not-done")
-          .addEventListener("click", function() {
-            appState.filter = "notDone";
-            render(appState);
-          });
+        document.querySelector(".show-not-done").addEventListener("click", function() {
+          appState.filter = "notDone";
+          render(appState);
+        });
 
-        document
-          .querySelector(".show-all")
-          .addEventListener("click", function() {
-            appState.filter = "all";
-            render(appState);
-          });
+        document.querySelector(".show-all").addEventListener("click", function() {
+          appState.filter = "all";
+          render(appState);
+        });
 
         document.querySelectorAll(".todoitem").forEach(function(todoItemEl) {
           todoItemEl.addEventListener("click", function() {
