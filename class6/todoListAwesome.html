@@ -45,6 +45,10 @@
         return Math.floor(new Date().getTime() * Math.random()) + "";
       }
 
+      /**
+       * THIS IS OUR MAIN APP STATE
+       * appState is an object used to hold value that mapping with UI appearance.
+      */
       let appState = {
         filter: "all",
         todos: [
@@ -66,16 +70,10 @@
         ]
       };
 
-      function renderTodoItems(todos) {
-        let todosStringArr = todos.map(function(todo) {
-          return `
-            <li class="todoitem ${todo.done ? "done" : ""}" data-id="${todo.id}">
-              ${todo.name}
-            </li>`;
-        });
-        return todosStringArr.join("");
-      }
-
+      /**
+       * THIS IS OUR MAIN FUNCTION
+       * Take in a application state object and render HTML accordingly
+      */
       function render(state) {
         let body = document.querySelector("body");
         let displayTodo = state.todos.filter(function(todo) {
@@ -99,6 +97,16 @@
         `;
         body.innerHTML = template;
         bindEvents();
+      }
+
+      function renderTodoItems(todos) {
+        let todosStringArr = todos.map(function(todo) {
+          return `
+            <li class="todoitem ${todo.done ? "done" : ""}" data-id="${todo.id}">
+              ${todo.name}
+            </li>`;
+        });
+        return todosStringArr.join("");
       }
 
       function renderFilterButton(type, state) {
