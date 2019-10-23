@@ -214,12 +214,23 @@
           if(state.shoppingCart.length === 0){
               return `<h1>You've buy nothing. Go shopping !!!</h1>`
           }
-          return state.shoppingCart.map(function(item){
+          const totalPrice = state.shoppingCart.reduce((sum, item) => {
+            sum = sum + item.price * item.quantity
+            return sum
+          }, 0)
+          const shoppingCartEls = state.shoppingCart.map(function(item){
               return `<div>
                     <span>${item.name}</span>
                     <span>${item.quantity}</span>
                 </div>`
           }).join('')
+
+          return `
+            <div>
+                ${shoppingCartEls}
+                <span>Total price: ${totalPrice}</span>
+            </div>
+          `
       }
 
       function renderHomePage(state) {
