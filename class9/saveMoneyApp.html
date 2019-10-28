@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>App Chi Tieu</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        font-family: "Times New Roman", Times, serif;
+        box-sizing: border-box;
+        list-style: inside;
+        font-size: 18px;
+      }
+
+      header {
+        text-align: center;
+        margin: 20px 0px;
+        font-size: 50px;
+        color: #ff4500;
+      }
+
+      .container {
+        width: 50%;
+        margin: auto;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+      }
+
+      .nav {
+        background-color: #edded0;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 20px;
+        margin: 10px 0px 30px 0px;
+      }
+
+      input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+      }
+
+      button {
+        width: 80px;
+        padding: 10px;
+      }
+
+      .disable {
+        visibility: hidden;
+      }
+
+      .inform,
+      .red {
+        color: red;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      .content {
+        margin: 10px 0px 30px 0px;
+        background-color: #69c7b5;
+        line-height: 40px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      //moment.js
+      
+      function calendar() {
+        let dateArr = [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thurday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ];
+        let monthArr = [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec"
+        ];
+        let today = new Date();
+        let day = dateArr[today.getDay() - 1];
+        let date = today.getDate();
+        let month = monthArr[today.getMonth()];
+        let year = today.getFullYear();
+
+        return `${day} - ${date} - ${month} - ${year}`
+      }
+      function generateUniqueId() {
+        return Math.floor(new Date().getTime() * Math.random()) + "";
+      }
+      let appState = {
+        budget: 5000000,
+        budgetRemain: 5000000,
+        expenses: []
+      };
+
+      function renderHTML(state) {
+        let body = document.querySelector("body");
+        let template = `
+            <header>APPLICATION</header>
+            <div class="container">
+                ${renderHeader(appState)}
+                ${renderForm(appState)}
+                ${renderExpenses(appState)}
+            </div>
+          `;
+        body.innerHTML = template;
+        bindEvent();
+      }
+
+      function renderForm(state){
+        return `
+          <form action="/action_page.php">
+              <label for="expense">Expense</label>
+              <input type="text" id="expense" name="" placeholder="Input..." />
+
+              <label for="amount">Amount</label>
+              <input type="text" id="amount" name="currency-field" placeholder="How much..." />
+
+              <button class="addBtn">Add</button>
+              <p class="inform"></p>
+          </form>
+        `
+      }
+      function renderHeader(state) {
+        return `         
+            <div class="nav">
+                <div class="budget">Budget : ${new Intl.NumberFormat().format(
+                  state.budget
+                )} VND</div>
+                <div class="time">${calendar()}</div>
+                <div class="budget-remain ${
+                  appState.budgetRemain <= 0 ? "red" : ""
+                }">Remain : ${new Intl.NumberFormat().format(
+          state.budgetRemain
+        )} VND</div>
+            </div>
+          `;
+      }
+      function renderExpenses(state) {
+        let listExpense = state.expenses
+          .map(function(item) {
+            return `
+                <li data-id="${item.id}">
+                  ${item.name} : ${new Intl.NumberFormat().format(item.amount)} VND
+                </li>
+            `;
+          })
+          .join("");
+        return `
+            <div class="content">
+                <ul class="list-content">
+                    ${listExpense}
+                </ul>
+            </div>
+          `;
+      }
+      renderHTML(appState);
+
+      function bindEvent() {
+        // if budgetRemain <= 0, cannot add
+        if (appState.budgetRemain <= 0) {
+          document.querySelector(".addBtn").classList.add("disable");
+          document.querySelector(".inform").innerHTML =
+            "Out of budget, cannot add anymore!!";
+        } else if (appState.budgetRemain !== 0) {
+          document
+            .querySelector(".addBtn")
+            .addEventListener("click", function(event) {
+              event.preventDefault();
+
+              let expenseInput = document.querySelector("#expense").value;
+              let amountInput = Number(document.querySelector("#amount").value);
+              // if Text input (Expenseinput) or number input (amonutInput) ILLEGAL, cannot add
+              if (
+                invalidExpenseInput(expenseInput) ||
+                invalidAmountInput(amountInput)
+              ) {
+                return;
+              }
+              // if notEnoughMoney is TRUE from budgerRemain, cannot add and pop up alert
+              if (notEnoughBudget(amountInput)) {
+                alert("not enough money to your expense");
+                return;
+              }
+
+              let newExpense = {
+                id: generateUniqueId(),
+                name: expenseInput,
+                amount: amountInput
+              };
+
+              appState.expenses.push(newExpense);
+              appState.budgetRemain = appState.budgetRemain - amountInput
+              renderHTML(appState);
+              setFocustoTextBox();
+            });
+        }
+      }
+
+      function invalidExpenseInput(value) {
+        return value.trim() === "";
+      }
+      function invalidAmountInput(value) {
+        return isNaN(value) === true;
+      }
+      function notEnoughBudget(value) {
+        return  value > appState.budgetRemain
+      }
+      function setFocustoTextBox() {
+        document.querySelector("#expense").focus();
+      }
+    </script>
+  </body>
+</html>
