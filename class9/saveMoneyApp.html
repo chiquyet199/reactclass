@@ -142,8 +142,8 @@
               <label for="amount">Amount</label>
               <input type="text" id="amount" name="currency-field" placeholder="How much..." />
 
-              <button class="addBtn">Add</button>
-              <p class="inform"></p>
+              ${state.budgetRemain < 0 ? '' : '<button class="addBtn">Add</button>'}
+              ${state.budgetRemain < 0 ? '<p class="inform">Out of budget, cannot add anymore!!</p>' : ''}
           </form>
         `
       }
@@ -183,12 +183,6 @@
       renderHTML(appState);
 
       function bindEvent() {
-        // if budgetRemain <= 0, cannot add
-        if (appState.budgetRemain <= 0) {
-          document.querySelector(".addBtn").classList.add("disable");
-          document.querySelector(".inform").innerHTML =
-            "Out of budget, cannot add anymore!!";
-        } else if (appState.budgetRemain !== 0) {
           document
             .querySelector(".addBtn")
             .addEventListener("click", function(event) {
@@ -220,7 +214,6 @@
               renderHTML(appState);
               setFocustoTextBox();
             });
-        }
       }
 
       function invalidExpenseInput(value) {
