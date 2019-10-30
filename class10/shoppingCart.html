@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Shopping cart</title>
+    <style>
+      body button {
+        width: 110px;
+        height: 40px;
+        font-size: 15px;
+        margin: 10px 10px;
+      }
+      body input {
+        width: 200px;
+        height: 35px;
+        font-size: 15px;
+      }
+      html,
+      body,
+      ul,
+      li {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        list-style: none;
+      }
+      html,
+      body {
+        height: 100%;
+        overflow: hidden;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+      }
+      button {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 20px;
+        min-width: 150px;
+        font-size: 14px;
+        outline: none;
+      }
+      button:hover {
+        cursor: pointer;
+        border: 1px solid #36a579;
+      }
+      #root {
+        flex: 1 1;
+      }
+      nav {
+        background: #36a579;
+        color: #eee;
+        padding: 10px;
+      }
+      nav ul {
+        display: flex;
+        justify-content: center;
+      }
+      nav ul li.active {
+        cursor: pointer;
+        height: 32px;
+        line-height: 32px;
+        border-bottom: 3px solid salmon;
+      }
+      nav ul li {
+        display: inline-block;
+        padding: 5px 15px;
+        height: 35px;
+        line-height: 35px;
+        text-transform: uppercase;
+      }
+      nav ul li:hover {
+        cursor: pointer;
+        height: 32px;
+        line-height: 32px;
+        border-bottom: 3px solid salmon;
+      }
+      .page {
+        height: 100%;
+      }
+      .contact .content,
+      .home .content {
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        justify-content: center;
+        display: flex;
+      }
+      .contact .content {
+        /* background-image: url('./assets/map.png'); */
+      }
+      .home .content {
+        /* background-image: url('./assets/wallpaper.jpg'); */
+      }
+      .products .content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-height: calc(100vh - 100px);
+        overflow-y: auto;
+      }
+      .checkout .content {
+        padding: 20px;
+      }
+      .product.hide {
+        display: none;
+      }
+      button.active {
+        background: #36a579;
+      }
+      .product {
+        border-radius: 3px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 100px;
+        margin: 20px;
+        border: 1px solid #aaa;
+      }
+      .product-item {
+        background: seashell;
+        padding: 15px 10px;
+        margin-bottom: 2px;
+        display: flex;
+        justify-content: space-evenly;
+      }
+      .product-item span {
+        flex: 0.2 1;
+      }
+      .product-item:hover {
+        cursor: pointer;
+      }
+      .shopping-cart {
+        position: absolute;
+        right: 10px;
+        top: 0;
+        line-height: 65px;
+      }
+      .shopping-cart:hover {
+        cursor: pointer;
+      }
+      .del {
+        min-width: 0;
+        width: 100px;
+        border-radius: 5px;
+      }
+      .quantity {
+        width: 50px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script src="api.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

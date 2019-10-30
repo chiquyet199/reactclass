@@ -1,0 +1,4 @@
+//Exercise
+function formatMoney(value){
+    
+}
