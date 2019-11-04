@@ -1,0 +1,496 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.clear {
+    clear: both;
+}
+
+/* MOBILE */
+
+/* HEADER-PAGE */
+.detail-content{
+    margin-top: 20px;
+}
+.detail-header {
+    background-image: url(../assest/images/footer-bg.jpg);
+    background-size: cover;
+    height: 100px;
+    padding: 20px 0px;
+    width: 100%;
+    text-align: center;
+}
+
+.detail-header h1 {
+    padding-top: 2%;
+    color: rgb(5, 52, 78);
+    font-size: 25px;
+}
+
+.detail-list {
+    display: inline-block;
+    width: 120px;
+    background-color: rgb(228, 243, 250);
+    margin: 10px;
+}
+
+.detail-sub {
+    display: inline-block;
+    width: 47%;
+}
+
+.header-first a {
+    font-weight: 900;
+    color: rgb(8, 36, 59);
+    font-size: 18px;
+}
+
+.header-second a {
+    font-weight: 600;
+    color: rgb(88, 84, 84);
+    font-size: 18px;
+}
+
+/* ICON */
+/* bo khung icon */
+.tab-sub-icon {
+    background-color: rgb(235, 246, 247);
+    border: 1px solid transparent;
+    width: 84%;
+    border-radius: 24px;
+    padding: 15px 10px;
+    position: relative;
+    float: left;
+}
+
+.tab-sub-icon i {
+    color: rgb(33, 83, 129);
+
+}
+
+.minus,
+.plus {
+    background-color: white;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    padding: 10px;
+    display: inline-block;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+}
+.plus{
+    left: auto;
+    right: 4px;
+}
+/* icon đầu trang  */
+.tab-sub-icon span {
+    position: relative;
+    top: 0px;
+    right: -50%;
+}
+
+.icon-like {
+    background-color: rgb(255, 225, 225);
+    border: 1px solid transparent;
+    border-radius: 50%;
+    padding: 15px;
+    display: inline-block;
+    float: left;
+
+}
+
+.icon-like i {
+    color: rgb(238, 159, 159);
+}
+
+.sub-button {
+    margin-top: 40px;
+}
+
+.sub-button button {
+    padding: 15px 0px;
+    border: 1px solid transparent;
+    background-color: rgb(238, 136, 105);
+    color: white;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+}
+
+/* icon trái tim phần cuối trang */
+/* tạo bo tròn cho icon */
+.icon-products {
+    padding: 8px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    background-color: rgb(253, 225, 209);
+}
+
+.icon-products i {
+    color: rgb(238, 159, 159);
+
+}
+
+.products-listing h6 {
+    font-size: 12px;
+    color: red;
+    padding-bottom: 10px;
+
+}
+
+.products-listing h3 {
+    padding-bottom: 10px;
+}
+
+.products-listing h3 a {
+    font-size: 20px;
+    color: rgb(24, 24, 61);
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.products-listing p {
+    display: inline-block;
+    padding-bottom: 15px;
+    font-weight: 600;
+    color: rgb(97, 94, 93);
+}
+
+.products-listing p:last-child {
+    color: rgb(173, 165, 165);
+    text-decoration: line-through;
+}
+
+/* content */
+/* head-content */
+.head-content {
+    padding: 10px;
+}
+
+.head-content h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: #394e5c;
+}
+
+.head-content h2 a {
+    color: rgb(65, 95, 126);
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+}
+
+.head-content p {
+    font-size: 20px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.head-content-1st-p {
+    color: red;
+    padding-right: 40px;
+
+}
+
+.head-content p:last-child {
+    color: grey;
+    text-decoration: line-through;
+    opacity: 0.6;
+
+}
+
+.info-content {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.info-content p {
+    color: rgb(99, 91, 91);
+    font-size: 16px;
+
+}
+
+.sub-content {
+    margin: 40px 0px;
+}
+
+.left-sub {
+    display: inline-block;
+    font-weight: 600;
+    color: rgb(26, 46, 65);
+}
+
+.left-sub li {
+    font-size: 15px;
+}
+
+.right-sub {
+    display: inline-block;
+}
+
+/* block miêu tả SP */
+.detail-des {
+    padding: 10px;
+    margin-top: 50px;
+}
+
+.detail-des p {
+    text-align: justify;
+    border: 1px solid rgb(199, 223, 236);
+    margin-top: 20px;
+}
+
+/* tạo khung box miêu tả */
+.first-box {
+    display: inline-block;
+    padding: 15px 45px;
+    background-color: rgb(238, 136, 105);
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.first-box a {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.last-box {
+    display: inline-block;
+    padding: 10px 40px;
+    border: 1px solid rgb(189, 164, 164);
+    width: 100%;
+    text-align: center;
+}
+
+.last-box a {
+    color: rgb(80, 62, 62);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* phần thông tin cuối */
+.detail-products h2 {
+    font-size: 19px;
+    margin: 10px 71px;
+}
+
+
+.detail-products>h6 {
+    color: rgb(141, 129, 129);
+    font-size: 15px;
+}
+
+.detail-products {
+    padding: 10px;
+}
+
+/* thông tin sp cuối */
+.sub-products {
+    margin-left: 15%;
+    margin-top: 40px;
+    position: relative;
+}
+
+.products-listing {
+    display: inline-block;
+    float: left;
+}
+
+/* tạo đường gạch ngang cho box */
+.sub-products::after {
+    content: '';
+    width: 100px;
+    height: 1px;
+    bottom: 0px;
+    background-color: rgb(141, 171, 185);
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 100px;
+}
+
+.sub-products:nth-child(4)::after {
+    content: none;
+}
+
+.sub-products:last-child::after {
+    content: none;
+}
+
+.sub-products-icon {
+    display: inline-block;
+    float: right;
+    margin-right: 15%;
+}
+
+
+@media only screen and (min-width: 401px) and (max-width: 990px) {
+    .tab-sub-icon {
+        width: 40%;
+    }
+
+    .detail-products h2 {
+        font-size: 35px;
+        margin: 10px 210px;
+    }
+
+    .detail-products>h6 {
+        font-size: 13px;
+        margin: 10px 224px;
+
+    }
+    .sub-button button{
+        width: 50%;
+    }
+    .icon-like{
+        margin-left: 25px;
+    }
+    .first-box, .last-box{
+        width: auto;
+        margin-bottom: 0;
+    }
+}
+
+/* PC */
+@media only screen and (min-width: 991px) {
+
+    /* header-content */
+    .head-content,
+    .info-content {
+        display: inline-block;
+
+    }
+
+    .right-content {
+        margin-top: 60px;
+        width: 50%;
+        float: right;
+        text-align: justify;
+        padding: 0 10px;
+    }
+
+    .head-content {
+        padding: 0px 0px 30px 0px;
+        border-bottom: 1px solid rgb(240, 209, 183);
+
+    }
+
+    .head-content h2 {
+        padding: 10px 0px;
+    }
+
+    .head-content-1st-p {
+        float: left;
+
+    }
+
+    .head-content p:last-child {
+        float: right;
+        padding-right: 343px;
+    }
+
+    .info-content {
+        float: right;
+        padding: 0;
+    }
+
+    .info-content p {
+        color: rgb(99, 91, 91);
+        font-size: 14px;
+    }
+
+    .left-sub {
+        float: left;
+
+    }
+
+    .right-sub {
+        float: left;
+        margin-left: 10px;
+    }
+
+    .right-sub li {
+        font-size: 15px;
+    }
+
+    /* phần icon header nội dung */
+    /* phần span của sub-icon */
+    .tab-sub-icon {
+        width: 26%;
+    }
+
+    .tab-sub-icon span {
+        position: relative;
+        top: 0px;
+    }
+
+    .sub-button {
+        margin-top: 40px;
+    }
+
+    .sub-button button {
+        padding: 15px 62px;
+        width: auto;
+    }
+
+    .plus {
+        left: auto;
+        right: 3px;
+    }
+
+    /* phần miêu tả sp */
+    .detail-des {
+        margin-left: 15%;
+        margin-top: 50px;
+        padding: 0;
+    }
+
+    .detail-des p {
+        text-align: justify;
+        border: 1px solid rgb(199, 223, 236);
+        width: 60%;
+        margin-top: 20px;
+        padding: 40px;
+    }
+
+    .last-box {
+        display: inline-block;
+        padding: 10px 40px;
+        border: 1px solid rgb(189, 164, 164);
+        width: auto;
+    }
+
+    .first-box {
+        padding: 15px 48px;
+        width: auto;
+    }
+
+    /* last-content */
+    .detail-products {
+        margin-top: 40px;
+        padding: 0;
+    }
+
+    .detail-products h2 {
+        font-size: 35px;
+        margin: 0;
+        margin-left: 40%;
+    }
+
+    .detail-products>h6 {
+        margin: 0;
+        margin-left: 41%;
+        font-size: 13px;
+
+    }
+
+}

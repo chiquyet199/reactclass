@@ -1,0 +1,259 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* MOBILE */
+
+.form-header h3 {
+    font-size: 21px;
+}
+
+.email,
+.password {
+    position: relative;
+}
+
+#email,
+#password {
+    padding: 10px;
+    border: 1px solid rgb(196, 220, 235);
+}
+
+
+.form-button {
+    margin: 0px 0px 50px 0px;
+}
+
+.last-button {
+    width: 100%;
+    font-weight: 600;
+    font-size: 13px;
+    color: white;
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px 0px;
+    border: 1px solid transparent;
+}
+.login-button{
+    text-align: center;
+}
+.lg-button {
+    background-color: rgb(17, 142, 180);
+}
+.lg-button a{
+    color: white;
+    font-weight: 600;
+    font-size: 13px;
+    color: white;
+
+}
+.rg-button {
+    background-color: rgb(247, 171, 120);
+}
+
+hr {
+    
+    background-color: rgb(48, 119, 185);
+    margin: 40px 0px;
+    opacity: .4;
+    position: relative;
+    overflow: visible;
+}
+
+hr::before {
+    content: "or";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background: #fff;
+    color: #000;
+
+}
+
+/* phần check-box */
+.form-checkbox p{
+    margin-top: 10px;
+}
+
+@media only screen and (min-width: 401px) and (max-width: 990px){
+    .form-checkbox p{
+        display: inline-block;
+        margin-left: 383px;
+        margin-top: 0;
+    }
+}
+
+@media only screen and (min-width: 991px) {
+
+
+    .login-header {
+        background-image: url(../assest/images/footer-bg.jpg);
+        background-size: cover;
+        height: 250px;
+        min-width: 960px;
+        text-align: center;
+
+    }
+
+    .login-header h1 {
+        padding-top: 2%;
+        color: rgb(5, 52, 78);
+    }
+
+    .login-list {
+        display: inline-block;
+        width: 200px;
+        background-color: rgb(228, 243, 250);
+        padding: 25px 20px;
+        margin: 29px;
+    }
+
+    .login-sub {
+        display: inline-block;
+        width: 44%;
+    }
+
+    .header-first a {
+        font-weight: 900;
+        color: rgb(8, 36, 59);
+        font-size: 18px;
+    }
+
+    .header-second a {
+        font-weight: 600;
+        color: rgb(88, 84, 84);
+        font-size: 18px;
+    }
+
+    form {
+        width: 600px;
+        margin: 0px auto;
+        border: 1px solid rgb(228, 218, 218);
+
+    }
+
+    .form-header {
+        padding-left: 37%;
+        margin-bottom: 30px;
+    }
+
+    .form-header h3 {
+        font-size: 21px;
+        padding-top: 20px;
+        margin-right: 208px;
+    }
+    .email-force, .password-force{
+        padding-right: 28px;
+    }
+    .email,
+    .password {
+        position: relative;
+    }
+
+    .email-force::after {
+        content: "**";
+        color: red;
+        position: absolute;
+        top: -3px;
+        left: 98px;
+
+    }
+
+    .password-force::after {
+        content: "**";
+        color: red;
+        position: absolute;
+        top: -4px;
+        left: 67px;
+
+    }
+
+    .form-input,
+    .form-checkbox,
+    .form-button {
+        width: 400px;
+        margin: 16px auto;
+        padding-bottom: 15px;
+    }
+    .form-checkbox p{
+        margin-top: 0;
+    }
+    .form-input {
+        display: flex;
+        flex-direction: column;
+        padding-top: 0px;
+    }
+
+    .form-input label {
+        padding-bottom: 10px;
+    }
+
+    #email,
+    #password {
+        width: 400px;
+        padding: 10px;
+        border: 1px solid rgb(196, 220, 235);
+    }
+
+    .form-checkbox {
+        display: flex;
+
+    }
+
+    .form-checkbox,
+    .form-input label {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .form-checkbox a {
+        margin-left: 159px;
+        color: rgb(126, 18, 18);
+        font-weight: 600;
+        font-size: 13px;
+    }
+
+    .last-button {
+        width: 100%;
+        height: 35px;
+        border: 1px solid transparent;
+        font-weight: 600;
+        font-size: 13px;
+        color: white;
+
+    }
+
+    .lg-button {
+        background-color: rgb(17, 142, 180);
+
+    }
+
+    hr {
+        width: 400px;
+        background-color: rgb(48, 119, 185);
+        margin: 40px 0px;
+        opacity: .4;
+        position: relative;
+        overflow: visible;
+    }
+
+    hr::before {
+        content: "or";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background: #fff;
+        color: #000;
+
+    }
+}

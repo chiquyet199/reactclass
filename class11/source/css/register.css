@@ -1,0 +1,364 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* MOBILE */
+.register-header,
+form {
+    width: 100%;
+
+}
+
+.register-header {
+    padding: 20px 0px;
+}
+
+.register-header {
+    background-image: url(../assest/images/footer-bg.jpg);
+    background-size: cover;
+    height: 100px;
+
+}
+.register-list {
+    display: inline-block;
+    width: 120px;
+    /* background-color: rgb(228, 243, 250); */
+    /* margin: 10px; */
+}
+
+.register-sub {
+    display: inline-block;
+    /* width: 47%; */
+    background-color: rgb(228, 243, 250);
+    padding: 30px 0;
+}
+
+.register-sub:last-child a {
+    border-right: none;
+}
+
+/* .header-first {} */
+
+.header-first a {
+    font-weight: 900;
+    color: rgb(8, 36, 59);
+    font-size: 18px;
+}
+
+.header-second a {
+    font-weight: 600;
+    color: rgb(88, 84, 84);
+    font-size: 18px;
+}
+
+form {
+    padding: 0 27px;
+    width: 90%;
+    /* margin: 0 20px; */
+    border: 1px solid rgb(197, 192, 192);
+    margin: 30px auto 64px auto;
+}
+
+.form-header h3 {
+    font-size: 21px;
+    padding-top: 20px;
+}
+
+
+/* 
+.form-input {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+
+} */
+
+.email label {
+    padding-bottom: 10px;
+    /* margin-right: 275px; */
+}
+
+.password label {
+    padding-bottom: 10px;
+    
+}
+
+.form-checkbox {
+    display: flex;
+    padding: 20px 0px;
+
+}
+
+.form-checkbox,
+.form-input label {
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+.form-checkbox a {
+    margin-left: 119px;
+    color: rgb(126, 18, 18);
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.form-button {
+    margin: 10px 0px 50px 0px;
+}
+
+.last-button {
+    width: 100%;
+    /* height: 35px; */
+    border: 1px solid transparent;
+    font-weight: 600;
+    font-size: 13px;
+    color: white;
+    padding: 10px 0;
+    display: block;
+    text-align: center;
+    
+}
+
+.lg-button {
+    background-color: rgb(17, 142, 180);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.rg-button {
+    background-color: rgb(223, 135, 76);
+}
+
+
+hr {
+    background-color: rgb(48, 119, 185);
+    margin: 40px 0px;
+    opacity: .4;
+    position: relative;
+    overflow: visible;
+}
+
+hr::before {
+    content: "or";
+    position: absolute;
+    top: 50%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background: #fff;
+    color: #000;
+
+}
+
+
+
+.register-header {
+    background-image: url(../assest/images/footer-bg.jpg);
+    background-size: cover;
+    height: 250px;
+    /* min-width: 960px; */
+    text-align: center;
+}
+
+.register-header h1 {
+    padding-top: 2%;
+    color: rgb(5, 52, 78);
+}
+
+.register-list {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    /* padding: 40px; */
+    /* width: 20%; */
+    margin-top: 15px;
+}
+
+.register-sub a {
+    /* border-right: 1px solid rgb(23, 22, 49); */
+    display: inline-block;
+    /* width: 44%; */
+    /* background-color: rgb(228, 243, 250); */
+    padding: 0 24px;
+}
+
+.header-first {
+    /* border-right: 1px solid rgb(23, 22, 49); */
+}
+
+.header-first a {
+    font-weight: 900;
+    color: rgb(8, 36, 59);
+    font-size: 18px;
+}
+
+.header-second a {
+    font-weight: 600;
+    color: rgb(88, 84, 84);
+    font-size: 18px;
+}
+
+
+.register-sub a{
+    position: relative;
+}
+
+.register-sub a::before{
+    content: "";
+    height: 100%;
+    width: 1px;
+    background:#000;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.register-sub:last-child a::before{
+    content: none;
+}
+
+@media only screen and (min-width: 991px) {
+
+
+
+
+    form {
+        width: 600px;
+        margin: 0px auto;
+        border: 1px solid rgb(228, 218, 218);
+
+    }
+
+    .form-header {
+        padding-left: 37%;
+        margin-bottom: 30px;
+    }
+
+    .form-header h3 {
+        font-size: 21px;
+        padding-top: 20px;
+        margin-right: 208px;
+    }
+
+    .form-input label {
+        padding-bottom: 10px;
+        text-align: left;
+    }
+
+    .email,
+    .password,
+    .username {
+        position: relative;
+    }
+
+    .email-force::after {
+        content: "**";
+        color: red;
+        position: absolute;
+        top: -3px;
+        left: 98px;
+
+    }
+
+    .password-force::after {
+        content: "**";
+        color: red;
+        position: absolute;
+        top: -4px;
+        left: 67px;
+
+    }
+
+    .username-force::after {
+        content: "**";
+        color: red;
+        position: absolute;
+        top: -4px;
+        left: 67px;
+
+    }
+
+    .form-input {
+        display: flex;
+        flex-direction: column;
+        padding-top: 0px;
+        width: 400px;
+        margin: 16px auto;
+        padding-bottom: 15px;
+    }
+
+    .form-button {
+        width: 400px;
+        margin: 16px auto;
+        padding-bottom: 15px;
+    }
+
+    #email,
+    #password,
+    #username {
+        width: 400px;
+        padding: 10px;
+        border: 1px solid rgb(196, 220, 235);
+    }
+
+
+    .form-input label {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .last-button {
+        width: 100%;
+        font-weight: 600;
+        font-size: 13px;
+        color: white;
+        display: block;
+        font-family: Arial, Helvetica, sans-serif;
+        
+    }
+
+    .lg-button {
+        background-color: rgb(17, 142, 180);
+        text-align: center;
+    }
+    .lg-button a{
+        color: white;
+        font-weight: 600;
+        font-size: 13px;
+        color: white;
+        
+    }
+    .rg-button {
+        background-color: rgb(223, 135, 76);
+    }
+
+
+    hr {
+        width: 400px;
+        background-color: rgb(48, 119, 185);
+        margin: 40px 0px;
+        opacity: .4;
+        position: relative;
+        overflow: visible;
+    }
+
+    hr::before {
+        content: "or";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background: #fff;
+        color: #000;
+
+    }
+}
