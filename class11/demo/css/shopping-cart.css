@@ -1,0 +1,439 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* MOBILE */
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+form {
+    margin-top: 30px;
+}
+
+.content {
+    margin: 5px;
+}
+
+.sc-header {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0px;
+    background-image: url(../assest/images/footer-bg.jpg);
+    background-size: cover;
+    height: 100px;
+}
+
+.sc-header h1 {
+    padding-top: 2%;
+    color: rgb(5, 52, 78);
+    font-size: 25px;
+}
+
+.sc-list {
+    display: inline-block;
+    width: 120px;
+}
+
+.sc-sub {
+    display: inline-block;
+    background-color: rgb(228, 243, 250);
+    padding: 30px 0;
+}
+
+.sc-sub:last-child a {
+    border-right: none;
+}
+
+.header-first a {
+    font-weight: 900;
+    color: rgb(8, 36, 59);
+    font-size: 18px;
+}
+
+.header-second a {
+    font-weight: 600;
+    color: rgb(88, 84, 84);
+    font-size: 18px;
+}
+
+.table-cover {
+    width: 100%;
+    overflow-x: scroll;
+
+}
+
+.content table {
+    width: 400px;
+}
+
+.content table,
+.content table th,
+.content table td {
+    border: 1px solid rgb(176, 213, 224);
+    border-collapse: collapse;
+    text-align: center;
+    color: rgb(15, 15, 49);
+}
+
+.content th,
+.content td {
+    padding: 15px 25px;
+}
+
+.tab-info td:nth-child(2) a {
+    color: rgb(76, 76, 131);
+    font-size: 13px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.content-x a {
+    font-weight: 600;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.input-coupon,
+.update-sc {
+    display: inline-block;
+
+}
+
+.update-sc {
+    width: 100%;
+}
+
+/* border khung icon */
+.tab-sub-icon {
+    background-color: rgb(189, 210, 211);
+    border: 1px solid transparent;
+    width: 150px;
+    border-radius: 24px;
+    padding: 15px 10px;
+    position: relative;
+}
+
+.minus,
+.plus {
+    background-color: white;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    padding: 10px;
+    display: inline-block;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+}
+
+.plus {
+    left: 111px;
+}
+
+.update-sc button,
+.input-coupon button {
+    font-size: 15px;
+    background-color: rgb(245, 175, 118);
+    font-weight: 600;
+    color: white;
+    padding: 8px 25px;
+    border: 1px solid transparent;
+    width: 100%;
+}
+
+.input-coupon button {
+    background-color: rgb(126, 182, 126);
+}
+
+.input-coupon {
+    margin: 20px 0px;
+    width: 100%;
+}
+
+.input-coupon input {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 7px 5px;
+    border: 1px solid rgb(164, 204, 226);
+
+    width: 100%;
+    margin: 5px 0px;
+}
+
+.last-sc {
+    display: inline-block;
+    padding-top: 50px;
+    /* padding-left: 10px; */
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.last-sc h4 {
+    font-size: 20px;
+    display: inline-block;
+    padding-bottom: 5px;
+    color: rgb(19, 40, 63);
+}
+
+.last-sc-info {
+    border: 1px solid rgb(176, 213, 224);
+    margin-bottom: -1px;
+    padding: 10px 9px 10px 10px;
+}
+
+.sc-1st {
+    display: inline-block;
+    float: left;
+    color: rgb(27, 58, 94);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.sc-2nd {
+    display: inline-block;
+    float: right;
+    font-weight: 600;
+}
+
+.sc-last-button {
+    padding: 10px 0px;
+}
+
+.sc-last-button button {
+    font-size: 14px;
+    background-color: rgb(245, 175, 118);
+    font-weight: 600;
+    color: white;
+    padding: 10px 25px;
+    border: 1px solid transparent;
+    width: 100%;
+}
+/* phần table */
+.tab-title th:nth-child(3){
+    padding: 0px;
+}
+/* tablet */
+@media only screen and (min-width: 401px) and (max-width: 990px) {
+    .content{
+    width: 96%;
+    margin: 30px auto 30px auto;
+    }
+    .table-cover {
+        overflow: initial;
+        width: auto;
+    }
+    .content table{
+        width: 0px;
+    }
+    
+    
+    /* edit từ đây */
+    .update-sc {
+        float: right;
+        margin-top: 20px;
+        width: auto;
+    }
+
+    .update-sc button,
+    .input-coupon button {
+        font-size: 18px;
+        background-color: rgb(245, 175, 118);
+        font-weight: 600;
+        color: white;
+        padding: 10px 25px;
+        border: 1px solid transparent;
+        width: auto;
+    }
+
+    .input-coupon button {
+        background-color: rgb(126, 182, 126);
+    }
+
+    .input-coupon {
+        margin: 20px 0px;
+        width: auto;
+    }
+
+    .input-coupon input {
+        width: 200px;
+        font-size: 15px;
+        font-weight: 600;
+        padding: 10px;
+        border: 1px solid rgb(164, 204, 226);
+
+    }
+
+    .last-sc {
+        clear: both;
+        display: inline-block;
+        float: right;
+        margin-right: 1px;
+        width: auto;
+    }
+
+    .last-sc h4 {
+        font-size: 25px;
+        display: inline-block;
+        padding-bottom: 10px;
+    }
+
+    .last-sc-info {
+        border: 1px solid rgb(176, 213, 224);
+        margin-bottom: -1px;
+        padding: 10px 9px 10px 10px;
+        width: 400px;
+    }
+
+    .sc-1st {
+        display: inline-block;
+        float: left;
+        color: rgb(27, 58, 94);
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .sc-2nd {
+        display: inline-block;
+        float: right;
+        font-weight: 600;
+    }
+
+    .sc-last-button {
+        padding: 10px 0px;
+    }
+
+    .sc-last-button button {
+        font-size: 14px;
+        background-color: rgb(245, 175, 118);
+        font-weight: 600;
+        color: white;
+        padding: 10px 25px;
+        border: 1px solid transparent;
+        width: auto;
+    }
+}
+
+/* pc */
+@media only screen and (min-width: 991px) {
+    .content {
+        width: 80%;
+        margin: 80px auto;
+
+    }
+
+    .table-cover {
+        overflow: initial;
+    }
+    .content table {
+        width: 100%;
+    }
+
+    form {
+        overflow: hidden;
+    }
+
+    .content table th,
+    .content table td {
+        padding: 25px 45px;
+
+    }
+
+    /* update-button */
+    .update-sc {
+        float: right;
+        margin-top: 20px;
+        width: auto;
+    }
+
+    .update-sc button,
+    .input-coupon button {
+        font-size: 18px;
+        background-color: rgb(245, 175, 118);
+        font-weight: 600;
+        color: white;
+        padding: 10px 25px;
+        border: 1px solid transparent;
+        width: auto;
+    }
+
+    .input-coupon button {
+        background-color: rgb(126, 182, 126);
+    }
+
+    .input-coupon {
+        margin: 20px 0px;
+        width: auto;
+    }
+
+    .input-coupon input {
+        width: 200px;
+        font-size: 15px;
+        font-weight: 600;
+        padding: 10px;
+        border: 1px solid rgb(164, 204, 226);
+
+    }
+
+    .last-sc {
+        clear: both;
+        display: inline-block;
+        float: right;
+        margin-right: 1px;
+        width: auto;
+    }
+
+    .last-sc h4 {
+        font-size: 25px;
+        display: inline-block;
+        padding-bottom: 10px;
+    }
+
+    .last-sc-info {
+        border: 1px solid rgb(176, 213, 224);
+        margin-bottom: -1px;
+        padding: 10px 9px 10px 10px;
+        width: 400px;
+    }
+
+    .sc-1st {
+        display: inline-block;
+        float: left;
+        color: rgb(27, 58, 94);
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .sc-2nd {
+        display: inline-block;
+        float: right;
+        font-weight: 600;
+    }
+
+    .sc-last-button {
+        padding: 10px 0px;
+    }
+
+    .sc-last-button button {
+        font-size: 14px;
+        background-color: rgb(245, 175, 118);
+        font-weight: 600;
+        color: white;
+        padding: 10px 25px;
+        border: 1px solid transparent;
+        width: auto;
+    }
+
+
+}

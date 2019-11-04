@@ -1,0 +1,628 @@
+/* 
++ header 
++ footer
+
+*/
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    font-size: 14px;
+}
+
+.clear {
+    clear: both;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+.header {
+    position: relative;
+}
+
+.menu-searching,
+.menu-login {
+    display: block;
+    position: absolute;
+}
+
+.menu-searching {
+    right: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.menu-login {
+    top: 50%;
+    right: 54px;
+    transform: translateY(-50%);
+}
+
+.cover {
+    padding: 5px auto;
+    background-color: rgb(187, 222, 248);
+    border: 1px solid transparent;
+    padding-left: 0px;
+}
+
+.icon-cover {
+    font-size: 12px;
+    padding: 10px;
+    color: rgb(60, 114, 150);
+}
+
+
+/* HEADER TOP */
+
+
+.register-header {
+    background-image: url(../assest/images/footer-bg.jpg);
+    background-size: cover;
+    height: 250px;
+    text-align: center;
+    background-position: center center;
+    margin-top: 56px;
+}
+
+.register-header h1 {
+    padding-top: 2%;
+    color: rgb(5, 52, 78);
+    font-size: 53px;
+}
+
+.register-list {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    /* padding: 40px; */
+    /* width: 20%; */
+    margin-top: 15px;
+}
+
+.register-sub a {
+    /* border-right: 1px solid rgb(23, 22, 49); */
+    display: inline-block;
+    /* width: 44%; */
+    /* background-color: rgb(228, 243, 250); */
+    padding: 0 24px;
+}
+
+
+
+.header-first a {
+    font-weight: 900;
+    color: rgb(8, 36, 59);
+    font-size: 18px;
+}
+
+.header-second a {
+    font-weight: 600;
+    color: rgb(88, 84, 84);
+    font-size: 18px;
+}
+
+
+.register-sub {
+    display: inline-block;
+    /* width: 47%; */
+    background-color: rgb(228, 243, 250);
+    padding: 30px 0;
+}
+.register-sub a{
+    position: relative;
+}
+
+.register-sub a::before{
+    content: "";
+    height: 100%;
+    width: 1px;
+    background:#000;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.register-sub:last-child a::before{
+    content: none;
+}
+/* FORM */
+.form-header{
+    text-align: center;
+    margin-top: 25px;
+}
+/* tạo sao cho form */
+#email,
+#password,
+#username {
+    padding: 10px 20px;
+    border: 1px solid rgb(196, 220, 235);
+}
+
+.email,
+.password,
+.username {
+    position: relative;
+}
+
+.form-page{
+    padding: 0 27px;
+    width: 90%;
+    /* margin: 0 20px; */
+    border: 1px solid rgb(197, 192, 192);
+    margin: 30px auto 64px auto;
+}
+
+.form-input{
+    padding-top: 20px;
+}
+.form-input label{
+    display: inline-block;
+    width: auto;
+    text-align: left;
+    color: black;
+    position: relative;
+    
+}
+.form-input label::after{
+    content: "**";
+    color: red;
+    position: absolute;
+    top: 0;
+    right: -15px;
+}
+
+.form-input input{
+    display: block;
+    width: 100%;
+
+}
+
+/* form- button */
+/* form- button cuối */
+.form-checkbox {
+    padding: 20px 0px;
+
+}
+
+.form-checkbox,
+.form-input label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-checkbox a {
+    
+    color: rgb(126, 18, 18);
+    font-weight: 600;
+    font-size: 13px;
+}
+
+
+
+
+/* MOBILE */
+
+.menu_listing,
+.menu-login,
+.menu-searching {
+    display: none;
+}
+
+img {
+    width: 100%;
+}
+
+.header {
+    display: block;
+    padding: 10px 7px;
+    margin: 0px auto;
+    box-shadow: 1px 1px 15px grey;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 90;
+    background-color: #fff;
+}
+
+.shopping-cart {
+    padding: 5px auto;
+    float: right;
+    background-color: rgb(187, 222, 248);
+    border: 1px solid transparent;
+    border-radius: 30px;
+    /* margin-left: 140px; */
+}
+
+.shopping-cart .cart-amount{
+    position: absolute;
+    bottom: 18px;
+    left: 22px;
+    background-color: rgb(221, 239, 243);
+    color: rgb(13, 90, 141);
+    border: 1px solid transparent;
+    border-radius: 50%;
+    z-index: 1;
+    width: 50%;
+    height: 50%;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.fa-shopping-cart {
+    font-size: 12px;
+    padding: 9px;
+    color: rgb(60, 114, 150);
+}
+
+.icon {
+    display: inline-block;
+    position: absolute;
+    right: 22px;
+    background-color: rgb(187, 222, 248);
+    border: 1px solid transparent;
+    border-radius: 30px;
+    /* margin-left: 156px; */
+    font-size: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* .icon::after {
+    content: "3";
+    position: absolute;
+    bottom: 18px;
+    left: 22px;
+    background-color: rgb(221, 239, 243);
+    color: rgb(13, 90, 141);
+    border: 1px solid transparent;
+    border-radius: 50%;
+    z-index: 1;
+    width: 50%;
+    height: 50%;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+} */
+
+.fa-bars {
+    float: left;
+    font-size: 36px;
+    color: rgb(30, 62, 63);
+}
+
+.menu-page {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 15px;
+    transform: translate(-50%, -50%);
+}
+
+.menu-page a {
+    opacity: .8;
+    color: rgb(127, 173, 192);
+    padding: 5px auto;
+    font-size: 600;
+}
+
+/* footer */
+.branding2 {
+    padding: 10px;
+    border-bottom: 1px dashed rgb(194, 222, 238);
+}
+
+footer .fa-address-card {
+    font-size: 35px;
+    color: rgb(26, 102, 153);
+}
+
+footer .logo_contact {
+    display: inline-block;
+
+}
+
+footer .logo_contact a {
+    float: left;
+}
+
+footer .logo_contact p {
+    float: right;
+    width: 70%;
+    font-size: 15px;
+    margin: 0px;
+
+}
+
+footer .logo_contact p,
+span {
+    color: rgb(13, 83, 129);
+    font-weight: 600;
+}
+
+footer .branding2 {
+    line-height: 35px;
+    font-size: 15px;
+}
+
+footer .branding2 h4 {
+    font-weight: 600;
+    font-size: 18px;
+}
+footer .branding2 h4 a{
+    font-size: 17px; 
+    color: rgb(57, 102, 161);
+    font-weight: 600;
+}
+.last-info {
+    padding: 10px;
+}
+
+.info {
+    padding: 10px 0px;
+}
+
+.info h4 {
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.info ul li {
+    padding: 10px 0px;
+}
+
+@media only screen and (min-width: 401px) and (max-width: 990px) {
+    .main{
+        padding: 0 20px;
+    }
+    
+    .menu-page {
+        
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        padding-left: 0px;
+        width: auto;
+       
+    }
+
+    .menu-page a {
+        font-size: 22px;
+
+    }
+
+    footer .branding2>p {
+        width: 60%;
+        text-align: justify;
+        float: left;
+    }
+
+    .last-info {
+        display: flex;
+        justify-content: space-between;
+    }
+    footer{
+        padding: 0 20px;
+    }
+
+    footer .logo_contact {
+        display: inline-block;
+        float: right;
+
+    }
+
+    footer .logo_contact p {
+        width: auto;
+        font-size: 22px;
+    }
+
+    footer .logo_contact a {
+        padding-right: 10px;
+    }
+
+    footer .info {
+        display: inline-block;
+        padding-right: 20px;
+    }
+}
+
+@media only screen and (min-width: 991px) {
+    .clear {
+        clear: both;
+    }
+
+    .fa-bars {
+        display: none;
+    }
+
+
+    .header {
+        display: block;
+        /* min-width: 960px; */
+        padding-top: 20px;
+        overflow: visible;
+        position: relative;
+        box-shadow: -9px -1px 7px grey;
+    }
+    /* header-page */
+    .register-header{
+        margin-top: 0;
+    }
+    .menu-login,
+    .menu-searching {
+        display: inline-block;
+        position: absolute;
+
+    }
+
+    .menu-searching {
+        top: 50%;
+        right: 100px;
+    }
+
+    .menu-login {
+        top: 50%;
+        right: 61px;
+    }
+
+    .menu-page {
+        display: inline-block;
+        padding-left: 0px;
+        text-align: center;
+        margin: 9px 0px 20px;
+        transform: none;
+        position: relative;
+        top: auto;
+        left: auto;
+        float: left;
+    }
+
+    .menu-page a {
+        font-size: 18px;
+        font-weight: 900;
+    }
+    
+
+    /* lÃƒÆ’Ã‚Â m cover cho icon */
+    .cover {
+        padding: 5px auto;
+        background-color: rgb(187, 222, 248);
+        border: 1px solid transparent;
+        border-radius: 50%;
+        padding-left: 0px;
+    }
+
+    .icon-cover {
+        font-size: 12px;
+        padding: 10px;
+        color: rgb(60, 114, 150);
+    }
+
+    /* sub-menu */
+
+    .menu_listing {
+        /* margin: 9px auto; */
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .menu_listing li {
+        float: left;
+        margin-right: 40px;
+    }
+
+    .menu_listing li a {
+        font-size: 17px;
+        font-weight: 900;
+        color: rgb(80, 137, 160);
+
+    }
+
+    .has-child {
+        position: relative;
+        width: 78px;
+    }
+
+    .menu-child {
+        display: none;
+        position: absolute;
+        top: 15px;
+        left: 0px;
+
+    }
+
+    .menu-child li {
+        background-color: rgb(218, 231, 236);
+        width: 120px;
+        opacity: .8;
+    }
+
+    .sub-menu {
+        margin-top: 3px;
+    }
+
+    .menu-child li {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid white;
+    }
+
+    .has-child:hover .menu-child {
+        display: block;
+    }
+
+    .cover:hover {
+        background-color: rgb(49, 81, 129);
+    }
+
+    .sub-menu:hover {
+        background-color: #fff;
+    }
+
+    /* footer */
+    footer .fa-address-card {
+        font-size: 30px;
+        color: rgb(26, 102, 153);
+    }
+
+    .branding2 {
+        border: none;
+        padding: 10px;
+        width: 300px;
+    }
+
+    footer {
+        background-image: url(../assest/images/footer-bg.jpg);
+        background-size: cover;
+        opacity: .8;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    footer .branding2>p {
+        text-align: justify;
+    }
+
+    footer .branding2 h4 a {
+        color: rgb(53, 140, 223);
+        font-size: 20px;
+        font-weight: 900;
+    }
+
+    .last-info {
+        /* width: 650px; */
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0px;
+    }
+
+    .info {
+        width: 200px;
+        /* padding-left: 20px; */
+    }
+
+    /* form */
+    .form-page{
+        margin: 50px auto 100px;
+        width: 50%;
+
+    }
+
+}
