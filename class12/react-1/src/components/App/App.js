@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../Button/Button.js";
 import Counter from "../Counter/Counter.js";
+import Toggle from "../Toggle/Toggle.js";
 import "./App.css";
 
 function App() {
@@ -14,9 +15,11 @@ function App() {
       
       <div style={{ padding: 20 }} />
       <Counter step={2}/>
-      <Counter startValue={4} step={3}/>
       <Counter startValue={0}/>
-      <Counter startValue={7}/>
+
+      <div style={{ padding: 20 }} />
+      <Toggle on/>
+      <Toggle/>
     </div>
   );
 }

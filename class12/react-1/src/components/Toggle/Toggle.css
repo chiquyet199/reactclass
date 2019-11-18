@@ -1,0 +1,17 @@
+.Toggle{
+    padding: 10px;
+    border: 2px solid;
+    max-width: 100px;
+    margin: 5px auto;
+    user-select: none;
+}
+
+.Toggle:hover{
+    cursor: pointer;
+}
+
+.Toggle.on{
+    color: white;
+    background: greenyellow;
+    border-color: pink;
+}
