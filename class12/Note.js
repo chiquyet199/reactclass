@@ -18,8 +18,9 @@ Là folder chứa các code của thư viện
   * 
   * Có 2 loại component
   *     functional component
-  *     class component
+  *     class component (Muốn xài state thì phải dùng class component)
   * 
   * Có 2 thành phần quan trọng trong 1 component
   *     props  (properties) : Dùng để component cha nói chuyện với component con
+  *     state: Dùng để quản lý state nội bộ của component
   */

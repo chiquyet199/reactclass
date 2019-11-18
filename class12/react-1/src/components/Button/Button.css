@@ -3,3 +3,13 @@ button{
     background: #cccccc;
     border: 2px solid #eeeeee;
 }
+
+button.white {
+    color: white;
+    background: black;
+}
+
+button.blue{
+    color: blue;
+    background: white;
+}
