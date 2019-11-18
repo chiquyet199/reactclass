@@ -1,6 +1,6 @@
 import React from "react";
-import Button from "./components/Button/Button.js";
-import Counter from "./components/Counter/Counter.js";
+import Button from "../Button/Button.js";
+import Counter from "../Counter/Counter.js";
 import "./App.css";
 
 function App() {
