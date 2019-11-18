@@ -4,5 +4,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## WELCOME TO REACT CLASS
 
-1 run `npm install`
-2 run `npm start`
+    1 run `npm install`
+    2 run `npm start`
