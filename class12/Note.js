@@ -1,3 +1,12 @@
+/**
+ * Cách tạo mới 1 app react
+ * 1 - Cài node
+ * 2 - Chạy câu lệnh `npm init react-app my-app` my-app là tên của app
+ * 3 - cd vào folder `my-app`
+ * 4 - Chạy câu lệnh `npm start` để start react app
+ */
+
+
 //package.json
 Là nơi chứa các thông tin của ứng dụng, ví dụ như tên, version, các thư viện đang được xài
 trong ứng dụng.
