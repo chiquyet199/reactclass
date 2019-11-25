@@ -1,0 +1,237 @@
+
+/* MOBILE */
+
+/* content */
+.main{
+    margin-top: 56px;
+    
+}
+.sale {
+    display: inline-block;
+    position: relative;
+}
+
+.sale-mark {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 15px;
+    background-color: rgb(165, 19, 19);
+    color: white;
+    font-weight: 600;
+
+}
+
+.discount {
+    text-decoration: line-through;
+    color: rgb(170, 155, 155);
+    font-weight: 600;
+    margin: 0px 10px;
+}
+
+.content {
+    padding-top: 20px;
+
+}
+
+.dishes {
+    display: inline-block;
+    padding: 10px;
+}
+
+.dishes h4 {
+    padding: 5px 0px;
+
+}
+
+.dishes h4 a {
+    font-size: 17px;
+}
+
+.dishes p {
+    font-weight: 600;
+    color: rgb(66, 62, 62);
+    font-size: 12px;
+
+}
+
+.mobile-showing {
+    display: inline-block;
+    margin-left: 10px;
+    color: rgb(80, 112, 117);
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid rgb(206, 226, 245);
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+/* sidebar */
+.sidebar {
+    padding-top: 20px;
+
+}
+.searching {
+    border-bottom: 1px dashed rgb(194, 222, 238);
+    min-height: 67px;
+    padding: 10px;
+}
+
+.searching h4 {
+    padding-bottom: 10px;
+    color: rgb(34, 71, 94);
+
+}
+
+.listing-2 {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-bottom: 1px dashed rgb(194, 222, 238);
+}
+
+.aside_img {
+    display: inline-block;
+    width: 260px;
+    overflow: hidden;
+}
+
+
+.aside_img>a {
+    float: left;
+    width: 30%;
+    margin-bottom: 10px;
+}
+
+.aside_listing {
+    float: left;
+    padding: 5px 10px;
+    font-size: 15px;
+}
+
+.sidebar-start {
+    color: rgb(233, 92, 73);
+    font-weight: 600;
+}
+
+.clear {
+    clear: both;
+}
+
+.listing-2 h3 {
+    margin-right: 39px;
+    padding-bottom: 20px;
+
+}
+
+.products {
+    margin: 0px;
+    padding: 0px;
+}
+
+#keyword {
+    padding: 5px;
+    border: 2px solid aliceblue;
+    border-radius: 3px;
+}
+
+.keyword-searching {
+    font-size: 20px;
+    color: rgb(50, 175, 224);
+    background-color: transparent;
+    border: none;
+}
+
+.ad-sidebar {
+    display: inline-block;
+    position: relative;
+    margin: 30px 10px;
+    width: 300px;
+}
+
+.ad-sidebar::after {
+    content: "GET 50% OFF FOR FOOD LOVERS";
+    display: inline-block;
+    position: absolute;
+    top: 32px;
+    left: 48px;
+    z-index: 1;
+    font-weight: 600;
+    width: 80%;
+    font-size: 28px;
+    color: rgb(166, 198, 218);
+    
+}
+/* tablet */
+@media only screen and (min-width: 401px) and (max-width: 990px){
+    .dishes{
+        width: 30%; 
+        text-align: left;
+
+    }
+    .menu-item{
+        text-align: center;
+    }
+    .aside_img{
+        width: 32%;
+
+    }
+    .searching{
+        display: none;
+    }
+    
+}
+/* pc */
+@media only screen and (min-width:991px) {
+    .main{
+        margin-top: 0;
+        margin-bottom: 100px;
+    }
+    .content {
+        width: 70%;
+        float: left;
+        margin: 0px auto;
+        padding: 15px 10px;
+    }
+
+    .menu-item {
+    
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .dishes {
+        display: inline-block;
+        width: 33.3%;
+    }
+
+    .mobile-showing {
+        margin: 20px 10px;
+    }
+
+
+    /* SIDEBAR */
+    .sidebar {
+        width: 30%;
+        float: right;
+    }
+
+    .keyword-searching {
+        background-color: transparent;
+        border: none;
+    }
+
+    .ad-sidebar {
+        width: 250px;
+        margin: 40px 10px;
+        display: inline-block;
+        position: relative;
+    }
+
+    .ad-sidebar::after { 
+        top: 28px;
+        left: 39px;
+        
+    }
+}
