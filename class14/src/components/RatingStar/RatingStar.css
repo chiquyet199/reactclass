@@ -1,0 +1,15 @@
+.rating-star{
+    display: flex;
+    flex-direction: row;
+}
+
+.star{
+    width: 20px;
+    height: 20px;
+    border: 1px solid;
+    margin: 2px;
+}
+
+.star.rated{
+    background: yellow;
+}

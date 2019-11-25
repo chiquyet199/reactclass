@@ -22,9 +22,13 @@ Xác định xem component đó cần những thông tin gì
     oldPrice: Number
     newPrice: Number
     isSale: Boolean
+    <RatingStar>
+    initValue: Number
+
 Xác định xem cách xài nó ntn
     <Product imgUrl="..." title="Spageti" oldPrice={300} newPrice={400} isSale>
     <Product imgUrl="..." title="Spageti" oldPrice={300} newPrice={400}>
+    <RatingStar initValue={3}>
 Viết code hàm render cho component
 Viết code css cho component
 Điều chỉnh hàm render theo những thông tin nhận vào
