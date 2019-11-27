@@ -18,34 +18,41 @@ function AddForm() {
   );
 }
 
-function TodoList(params) {
+function TodoList(props) {
+  const { todos } = props;
   return (
     <ul className="todoitems">
-      <li className="todoitem">nau an</li>
+      {/* <li className="todoitem">nau an</li>
       <li className="todoitem done">rua chen</li>
-      <li className="todoitem">giat do</li>
+      <li className="todoitem">giat do</li> */}
+      {todos.map(todo => (
+        <li key={todo.id} className={todo.done ? "todoitem done" : "todoitem"}>
+          {todo.name}
+        </li>
+      ))}
     </ul>
   );
 }
 
-function FilterButtons() {
+function FilterButtons(props) {
+  const { filter } = props;
   return (
     <div>
-      <button className="show-all filter-button active">All</button>
-      <button className="show-done filter-button  ">Done</button>
-      <button className="show-not-done filter-button  ">Not Done</button>
+      <button className={`show-all filter-button ${filter === "all" ? "active" : ""}`}>All</button>
+      <button className={`show-done filter-button  ${filter === "done" ? "active" : ""}`}>Done</button>
+      <button className={`show-not-done filter-button  ${filter === "notdone" ? "active" : ""}`}>Not Done</button>
     </div>
   );
 }
 
 class App extends React.Component {
   state = {
-    filter: "all",
+    filter: "done",
     todos: [
       {
         id: generateUniqueId(),
         name: "nau an",
-        done: false
+        done: true
       },
       {
         id: generateUniqueId(),
@@ -64,8 +71,8 @@ class App extends React.Component {
       <div>
         <TodoTitle />
         <AddForm />
-        <TodoList />
-        <FilterButtons />
+        <TodoList todos={this.state.todos} />
+        <FilterButtons filter={this.state.filter} />
       </div>
     );
   }
