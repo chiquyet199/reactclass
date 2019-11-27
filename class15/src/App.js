@@ -41,13 +41,31 @@ class App extends React.Component {
     this.setState({ todos: newTodos });
   };
 
+  toggleTodo = id => {
+    this.state.todos.forEach(todo => {
+      if (todo.id === id) {
+        todo.done = !todo.done;
+      }
+    });
+    this.setState({ todos: this.state.todos });
+  };
+
+  changeFilter = filter => {
+    this.setState({filter: filter})
+  }
+
   render() {
+    const displayTodos = this.state.todos.filter(todo => {
+      if(this.state.filter === 'all') return true
+      if(this.state.filter === 'done') return todo.done
+      if(this.state.filter === 'notdone') return !todo.done
+    })
     return (
       <div>
         <TodoTitle />
         <AddForm onSubmit={this.addNewTodo} />
-        <TodoList todos={this.state.todos} />
-        <FilterButtons filter={this.state.filter} />
+        <TodoList todos={displayTodos} onTodoClick={this.toggleTodo} />
+        <FilterButtons filter={this.state.filter} onButtonClick={this.changeFilter} />
       </div>
     );
   }
