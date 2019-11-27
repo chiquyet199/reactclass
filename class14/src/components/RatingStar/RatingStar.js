@@ -3,7 +3,8 @@ import './RatingStar.css'
 
 class RatingStar extends React.Component{
     state = {
-        value: this.props.initValue || 1
+        value: this.props.initValue || 1,
+        numsOfStar: this.props.numsOfStar || 5
     }
 
     handleStarClick = numberOfStar => () => {
@@ -11,14 +12,13 @@ class RatingStar extends React.Component{
     }
 
     render(){
-        const {value} = this.state;
+        const {value, numsOfStar} = this.state;
+        const array = Array.from({length: numsOfStar}, (item, index) => index + 1)
         return (
             <div className="rating-star">
-                <div onClick={this.handleStarClick(1)} className={value >= 1 ? 'star rated' : 'star'}></div>
-                <div onClick={this.handleStarClick(2)} className={value >= 2 ? 'star rated' : 'star'}></div>
-                <div onClick={this.handleStarClick(3)} className={value >= 3 ? 'star rated' : 'star'}></div>
-                <div onClick={this.handleStarClick(4)} className={value >= 4 ? 'star rated' : 'star'}></div>
-                <div onClick={this.handleStarClick(5)} className={value >= 5 ? 'star rated' : 'star'}></div>
+                {
+                    array.map(item => <div onClick={this.handleStarClick(item)} className={value >= item ? 'star rated' : 'star'}></div>)
+                }
             </div>
         )
     }
@@ -26,4 +26,4 @@ class RatingStar extends React.Component{
 
 export default RatingStar
 
-{/* <RatingStar initValue={3}/> */}
+{/* <RatingStar initValue={3} numsOfStar={7} /> */}
