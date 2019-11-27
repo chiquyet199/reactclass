@@ -17,3 +17,6 @@ function TodoList(props) {
 }
 
 export default TodoList;
+
+
+// <TodoItem id={} name={} isDone onClick={}/>
