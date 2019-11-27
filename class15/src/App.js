@@ -1,9 +1,9 @@
 import React from "react";
 import "./App.css";
-import TodoList from './components/TodoList'
-import TodoTitle from './components/TodoTitle'
-import AddForm from './components/AddForm'
-import FilterButtons from './components/FilterButtons'
+import TodoList from "./components/TodoList";
+import TodoTitle from "./components/TodoTitle";
+import AddForm from "./components/AddForm";
+import FilterButtons from "./components/FilterButtons";
 
 function generateUniqueId() {
   return Math.floor(new Date().getTime() * Math.random()) + "";
@@ -30,11 +30,22 @@ class App extends React.Component {
       }
     ]
   };
+
+  addNewTodo = name => {
+    const newTodo = {
+      id: generateUniqueId(),
+      name: name,
+      done: false
+    };
+    const newTodos = [...this.state.todos, newTodo];
+    this.setState({ todos: newTodos });
+  };
+
   render() {
     return (
       <div>
         <TodoTitle />
-        <AddForm />
+        <AddForm onSubmit={this.addNewTodo} />
         <TodoList todos={this.state.todos} />
         <FilterButtons filter={this.state.filter} />
       </div>
