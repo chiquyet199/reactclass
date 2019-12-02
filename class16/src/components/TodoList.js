@@ -1,22 +1,22 @@
 import React from 'react'
+import TodoItem from './TodoItem'
 
 function TodoList(props) {
-  const { todos, onTodoClick } = props;
+  const {todos, onTodoClick} = props
+
   return (
     <ul className="todoitems">
-      {/* <li className="todoitem">nau an</li>
-      <li className="todoitem done">rua chen</li>
-      <li className="todoitem">giat do</li> */}
       {todos.map(todo => (
-        <li key={todo.id} onClick={() => {onTodoClick(todo.id)}} className={todo.done ? "todoitem done" : "todoitem"}>
-          {todo.name}
-        </li>
+        <TodoItem
+          key={todo.id}
+          id={todo.id}
+          name={todo.name}
+          isDone={todo.done}
+          onClick={onTodoClick}
+        />
       ))}
     </ul>
-  );
+  )
 }
 
-export default TodoList;
-
-
-// <TodoItem id={} name={} isDone onClick={}/>
+export default TodoList
