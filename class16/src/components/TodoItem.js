@@ -1,12 +1,13 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import {AppContext} from '../App'
 
 function TodoItem(props) {
-  const {id, name, onClick, isDone} = props
-  console.log(props)
+  const context = useContext(AppContext)
+  const {id, name, isDone} = props
   return (
     <li
       onClick={() => {
-        onClick(id)
+        context.actions.toggleTodo(id)
       }}
       className={isDone ? 'todoitem done' : 'todoitem'}
     >

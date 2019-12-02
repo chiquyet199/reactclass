@@ -5,6 +5,8 @@ import TodoTitle from './components/TodoTitle'
 import AddForm from './components/AddForm'
 import FilterButtons from './components/FilterButtons'
 
+export const AppContext = React.createContext()
+
 function generateUniqueId() {
   return Math.floor(new Date().getTime() * Math.random()) + ''
 }
@@ -64,19 +66,26 @@ class App extends React.Component {
       if (this.state.filter === 'done') return todo.done
       if (this.state.filter === 'notdone') return !todo.done
     })
+
+    const contextValue = {
+      state: this.state,
+      actions: {
+        addNewTodo: this.addNewTodo,
+        toggleTodo: this.toggleTodo,
+        changeFilter: this.changeFilter,
+      },
+    }
+
     return (
-      <div>
+      <AppContext.Provider value={contextValue}>
         <TodoTitle />
         <AddForm onSubmit={this.addNewTodo} />
-        <TodoList
-          todos={displayTodos}
-          onTodoClick={this.toggleTodo}
-        />
+        <TodoList />
         <FilterButtons
           filter={this.state.filter}
           onButtonClick={this.changeFilter}
         />
-      </div>
+      </AppContext.Provider>
     )
   }
 }
