@@ -1,86 +1,45 @@
-import React from 'react'
-import './App.css'
-import TodoList from './components/TodoList'
-import TodoTitle from './components/TodoTitle'
-import AddForm from './components/AddForm'
-import FilterButtons from './components/FilterButtons'
+import React from "react";
+import {changeFilter} from './redux/actions'
+import {connect} from 'react-redux'
+import "./App.css";
+import TodoList from "./components/TodoList";
+import TodoTitle from "./components/TodoTitle";
+import AddForm from "./components/AddForm";
+import FilterButtons from "./components/FilterButtons";
 
-export const AppContext = React.createContext()
-
-function generateUniqueId() {
-  return Math.floor(new Date().getTime() * Math.random()) + ''
-}
-
-const defaultTodos = [
-  {
-    id: generateUniqueId(),
-    name: 'nau an',
-    done: true,
-  },
-  {
-    id: generateUniqueId(),
-    name: 'giat do',
-    done: true,
-  },
-  {
-    id: generateUniqueId(),
-    name: 'trong con ',
-    done: false,
-  },
-]
+export const AppContext = React.createContext();
 
 class App extends React.Component {
-  state = {
-    filter: 'all',
-    todos: defaultTodos,
-  }
-
-  addNewTodo = name => {
-    const newTodo = {
-      id: generateUniqueId(),
-      name: name,
-      done: false,
-    }
-    const newTodos = [...this.state.todos, newTodo]
-    this.setState({todos: newTodos})
-  }
-
-  toggleTodo = id => {
-    this.state.todos.forEach(todo => {
-      if (todo.id === id) {
-        todo.done = !todo.done
-      }
-    })
-    localStorage.setItem('todos', JSON.stringify(this.state.todos))
-    this.setState({todos: this.state.todos})
-  }
-
-  changeFilter = filter => {
-    this.setState({filter: filter})
-  }
-
   render() {
-    const contextValue = {
-      state: this.state,
-      actions: {
-        addNewTodo: this.addNewTodo,
-        toggleTodo: this.toggleTodo,
-        changeFilter: this.changeFilter,
-      },
-    }
-
     return (
-      <AppContext.Provider value={contextValue}>
+      <>
         <TodoTitle />
-        <AddForm onSubmit={this.addNewTodo} />
+        <h2>filterValue = {this.props.filterValue}</h2>
+        {this.props.todoList.map(i => <div>{i.name}</div>)}
+        <button onClick={this.props.changeFilterToDone}>Change filter value</button>
+        {/* <AddForm />
         <TodoList />
-        <FilterButtons
-          filter={this.state.filter}
-          onButtonClick={this.changeFilter}
-        />
-      </AppContext.Provider>
-    )
+        <FilterButtons /> */}
+      </>
+    );
   }
 }
 
-export default App
+const mapStateToProps = state => {
+  return {
+    todoList: state.todos,
+    filterValue: state.filter
+  }
+}
+
+const mapActionsToProps = dispatch => {
+  return {
+    changeFilterToDone: () => {
+      dispatch(changeFilter('done'))
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapActionsToProps)(App);
+// export default connect(null, mapActionsToProps)(App);
+// export default connect(mapStateToProps)(App);
