@@ -1,13 +1,28 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body button {
+  width: 100px;
+  height: 40px;
+  font-size: 15px;
+  margin: 10px 10px;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body input {
+  width: 200px;
+  height: 35px;
+  font-size: 15px;
+}
+.todoitem {
+  color: blue;
+  font-size: 20px;
+  margin: 10px 0;
+  user-select: none;
+}
+.todoitem.done {
+  color: gray;
+  text-decoration: line-through;
+}
+.filter-button.active {
+  background-color: red;
+  color: white;
+}
+.hidden {
+  display: none;
 }
