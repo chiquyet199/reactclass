@@ -32,7 +32,7 @@ const defaultTodos = [
 class App extends React.Component {
   state = {
     filter: 'all',
-    todos: JSON.parse(localStorage.getItem('todos')) || defaultTodos,
+    todos: defaultTodos,
   }
 
   addNewTodo = name => {
@@ -42,7 +42,6 @@ class App extends React.Component {
       done: false,
     }
     const newTodos = [...this.state.todos, newTodo]
-    localStorage.setItem('todos', JSON.stringify(newTodos))
     this.setState({todos: newTodos})
   }
 
@@ -61,12 +60,6 @@ class App extends React.Component {
   }
 
   render() {
-    const displayTodos = this.state.todos.filter(todo => {
-      if (this.state.filter === 'all') return true
-      if (this.state.filter === 'done') return todo.done
-      if (this.state.filter === 'notdone') return !todo.done
-    })
-
     const contextValue = {
       state: this.state,
       actions: {
