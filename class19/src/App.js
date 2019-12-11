@@ -1,5 +1,5 @@
 import React from "react";
-import {changeFilter} from './redux/actions'
+import {setTodos} from './redux/actions'
 import {connect} from 'react-redux'
 import "./App.css";
 import TodoList from "./components/TodoList";
@@ -10,6 +10,12 @@ import FilterButtons from "./components/FilterButtons";
 export const AppContext = React.createContext();
 
 class App extends React.Component {
+  async componentDidMount(){
+    const response = await window.fetch('http://localhost:3000/todos');
+    const data = await response.json();
+    this.props.setTodos(data)
+  }
+
   render() {
     return (
       <>
@@ -22,21 +28,12 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    todoList: state.todos,
-    filterValue: state.filter
-  }
-}
-
 const mapActionsToProps = dispatch => {
   return {
-    changeFilterToDone: () => {
-      dispatch(changeFilter('done'))
+    setTodos: data => {
+      dispatch(setTodos(data))
     }
   }
 }
 
-export default connect(mapStateToProps, mapActionsToProps)(App);
-// export default connect(null, mapActionsToProps)(App);
-// export default connect(mapStateToProps)(App);
+export default connect(null, mapActionsToProps)(App);

@@ -5,7 +5,7 @@
  * và trả về appState mới
  */
 
-import {ADD_TODO, TOGGLE_TODO, CHANGE_FILTER} from './actions'
+import {ADD_TODO, TOGGLE_TODO, CHANGE_FILTER, SET_TODOS} from './actions'
 
 function generateUniqueId() {
   return Math.floor(new Date().getTime() * Math.random()) + "";
@@ -14,21 +14,6 @@ function generateUniqueId() {
 const initialState = {
   filter: "all",
   todos: [
-    {
-      id: generateUniqueId(),
-      name: "nau an",
-      done: true
-    },
-    {
-      id: generateUniqueId(),
-      name: "giat do",
-      done: true
-    },
-    {
-      id: generateUniqueId(),
-      name: "trong con ",
-      done: false
-    }
   ]
 };
 
@@ -65,6 +50,8 @@ const reducers = (state = initialState, action) => {
       return addNewTodo(state,action);
     case TOGGLE_TODO:
       return toggleTodo(state,action);
+    case SET_TODOS:
+      return {...state, todos: action.data}
     case CHANGE_FILTER:
       return changeFilter(state, action);
     default:

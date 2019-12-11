@@ -4,6 +4,7 @@
  * trong đó bắt buộc phải có key là "type"
  */
 export const ADD_TODO = 'ADD_TODO'
+export const SET_TODOS = 'SET_TODOS'
 export const TOGGLE_TODO = 'TOGGLE_TODO'
 export const CHANGE_FILTER = 'CHANGE_FILTER'
 
@@ -28,10 +29,10 @@ export const changeFilter = filterValue => {
     }
 }
 
-// store.dispatch(changeFilter('done'))
+export const setTodos = todos => {
+    return {
+        data: todos,
+        type: SET_TODOS
+    }
+}
 
-// store = {
-//     dispatch: function (action) {
-//         reducers(state, action())
-//     }
-// }

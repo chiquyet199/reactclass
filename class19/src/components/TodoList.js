@@ -8,6 +8,7 @@ function TodoList(props) {
     if (props.filter === 'done') return todo.done
     if (props.filter === 'notdone') return !todo.done
   })
+  
   return (
     <ul className="todoitems">
       {displayTodos.map(todo => (

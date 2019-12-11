@@ -1,37 +1,19 @@
 {
-  "employees": [
+  "todos": [
     {
       "id": 1,
-      "first_name": "Sebastian",
-      "last_name": "Eschweiler",
-      "email": "sebastian@codingthesmartway.com"
+      "name": "Di cho",
+      "done": true
     },
     {
       "id": 2,
-      "first_name": "Steve",
-      "last_name": "Palmer",
-      "email": "steve@codingthesmartway.com"
+      "name": "Nau an",
+      "done": false
     },
     {
       "id": 3,
-      "first_name": "Ann",
-      "last_name": "Smith",
-      "email": "ann@codingthesmartway.com"
-    },
-    {
-      "id": 4
-    },
-    {
-      "first_name": "Quyet",
-      "last_name": "Chi",
-      "email": "chiquyet@gmail.com",
-      "id": 5
-    },
-    {
-      "first_name": "Quynh",
-      "last_name": "Anh",
-      "email": "qa@gmail.com",
-      "id": 6
+      "name": "Giat do",
+      "done": false
     }
   ]
 }
