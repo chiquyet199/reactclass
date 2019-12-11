@@ -1,0 +1,28 @@
+body button {
+  width: 100px;
+  height: 40px;
+  font-size: 15px;
+  margin: 10px 10px;
+}
+body input {
+  width: 200px;
+  height: 35px;
+  font-size: 15px;
+}
+.todoitem {
+  color: blue;
+  font-size: 20px;
+  margin: 10px 0;
+  user-select: none;
+}
+.todoitem.done {
+  color: gray;
+  text-decoration: line-through;
+}
+.filter-button.active {
+  background-color: red;
+  color: white;
+}
+.hidden {
+  display: none;
+}
