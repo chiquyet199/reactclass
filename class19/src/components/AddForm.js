@@ -1,17 +1,23 @@
-import React from 'react';
-import {connect} from 'react-redux';
-import {addNewTodo} from '../redux/actions'
+import React from "react";
+import { connect } from "react-redux";
+import { addNewTodo } from "../redux/actions";
+import { addNewTodo as addTodo } from "../api";
 
 function AddForm(props) {
-  const {onSubmit} = props
+  const { addNewTodo } = props;
 
-  const handleSubmitForm = e => {
-    e.preventDefault()
-    const input = document.querySelector('.todoitem-input');
-    onSubmit(input.value)
-    input.value = ''
-    input.focus();
-  }
+  const handleSubmitForm = async e => {
+    e.preventDefault();
+    const input = document.querySelector(".todoitem-input");
+    try{
+      await addTodo(input.value);
+      addNewTodo(input.value);
+      input.value = "";
+      input.focus();
+    }catch(e){
+      console.error(e)
+    }
+  };
 
   return (
     <form onSubmit={handleSubmitForm} className="add-todo">
@@ -23,10 +29,10 @@ function AddForm(props) {
 
 const mapActionsToProps = dispatch => {
   return {
-    onSubmit: (name) => {
-      dispatch(addNewTodo(name))
+    addNewTodo: name => {
+      dispatch(addNewTodo(name));
     }
-  }
-}
+  };
+};
 
 export default connect(null, mapActionsToProps)(AddForm);

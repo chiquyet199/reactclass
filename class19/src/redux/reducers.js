@@ -5,7 +5,7 @@
  * và trả về appState mới
  */
 
-import {ADD_TODO, TOGGLE_TODO, CHANGE_FILTER, SET_TODOS} from './actions'
+import {ADD_TODO, TOGGLE_TODO, CHANGE_FILTER, SET_TODOS, SHOW_LOADING, HIDE_LOADING} from './actions'
 
 function generateUniqueId() {
   return Math.floor(new Date().getTime() * Math.random()) + "";
@@ -13,6 +13,7 @@ function generateUniqueId() {
 
 const initialState = {
   filter: "all",
+  loading: false,
   todos: [
   ]
 };
@@ -52,6 +53,10 @@ const reducers = (state = initialState, action) => {
       return toggleTodo(state,action);
     case SET_TODOS:
       return {...state, todos: action.data}
+    case SHOW_LOADING:
+      return {...state, loading: true}
+    case HIDE_LOADING:
+      return {...state, loading: false}
     case CHANGE_FILTER:
       return changeFilter(state, action);
     default:

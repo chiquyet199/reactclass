@@ -7,6 +7,8 @@ export const ADD_TODO = 'ADD_TODO'
 export const SET_TODOS = 'SET_TODOS'
 export const TOGGLE_TODO = 'TOGGLE_TODO'
 export const CHANGE_FILTER = 'CHANGE_FILTER'
+export const SHOW_LOADING = 'SHOW_LOADING'
+export const HIDE_LOADING = 'HIDE_LOADING'
 
 export const addNewTodo = (name) => {
     return {
@@ -33,6 +35,17 @@ export const setTodos = todos => {
     return {
         data: todos,
         type: SET_TODOS
+    }
+}
+
+export const showLoading = () => {
+    return {
+        type: SHOW_LOADING
+    }
+}
+export const hideLoading = () => {
+    return {
+        type: HIDE_LOADING
     }
 }
 

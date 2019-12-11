@@ -1,6 +1,7 @@
 import React from "react";
-import {setTodos} from './redux/actions'
+import {setTodos, showLoading, hideLoading} from './redux/actions'
 import {connect} from 'react-redux'
+import {loadAllTodos} from './api'
 import "./App.css";
 import TodoList from "./components/TodoList";
 import TodoTitle from "./components/TodoTitle";
@@ -11,9 +12,10 @@ export const AppContext = React.createContext();
 
 class App extends React.Component {
   async componentDidMount(){
-    const response = await window.fetch('http://localhost:3000/todos');
-    const data = await response.json();
-    this.props.setTodos(data)
+    this.props.showLoading()
+    let todos = await loadAllTodos()
+    this.props.setTodos(todos)
+    this.props.hideLoading()
   }
 
   render() {
@@ -21,10 +23,16 @@ class App extends React.Component {
       <>
         <TodoTitle />
         <AddForm />
-        <TodoList />
+        {this.props.loading ? <h1>Loading....</h1> : <TodoList />}
         <FilterButtons />
       </>
     );
+  }
+}
+
+const mapStateToProps = state => {
+  return {
+    loading: state.loading
   }
 }
 
@@ -32,8 +40,10 @@ const mapActionsToProps = dispatch => {
   return {
     setTodos: data => {
       dispatch(setTodos(data))
-    }
+    },
+    showLoading: () => {dispatch(showLoading())},
+    hideLoading: () => {dispatch(hideLoading())},
   }
 }
 
-export default connect(null, mapActionsToProps)(App);
+export default connect(mapStateToProps, mapActionsToProps)(App);
